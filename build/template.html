@@ -291,7 +291,7 @@
   .where{display:flex;flex-wrap:wrap;gap:5px;}
   .where .chip{background:transparent;border-width:2px;font-weight:500;font-size:.82rem;padding:0 7px;}
   .note{margin:0;font-size:.86rem;color:var(--ink-soft);}
-  .stats{display:grid;grid-template-columns:1fr auto auto;gap:6px 14px;align-items:center;font-size:.86rem;}
+  .stats{display:grid;grid-auto-flow:column;grid-template-columns:1fr;grid-auto-columns:auto;gap:6px 14px;align-items:center;font-size:.86rem;}
   .stats .lab{color:var(--ink-soft);font-weight:600;}
   .meter{display:grid;gap:3px;}
   .meter .bar{height:10px;background:#cdb98c;border:2px solid var(--wood);}
@@ -340,6 +340,7 @@
     .tab{padding:6px 8px 8px;font-size:.6rem;gap:6px;flex:1 1 0;}
     .tab .ic{width:24px;height:24px;}
     .fgrid{grid-template-columns:1fr;}
+    .banner .rule{display:none;}
     .frow{grid-template-columns:1fr;gap:6px;}
     .fpanel .in{padding:12px;}
   }
@@ -560,13 +561,14 @@ apply();
 
 /* =====================  FISHING  ===================== */
 const FISH = /*FISH*/;
-const LOC_ORDER = ["Ocean","River","Mountain Lake","Forest Pond","Secret Woods","Sewers","Mines","Desert","Witch's Swamp","Bug Lair","Ginger Island","Night Market"];
+const LOC_ORDER = ["Ocean","River","Mountain Lake","Forest Pond","Secret Woods","Sewers","Mines","Desert","Witch's Swamp","Bug Lair","Ginger Island","Night Market","Expanded areas"];
 const FSECTIONS = [
   ["pole","Fishing rod",""],
   ["legendary","Legendary fish","Catch the original legend first; its offspring unlock later."],
   ["night","Night Market","Winter 15–17 only, from the submarine."],
   ["crab","Crab pots","No rod needed – drop a pot in the water."],
-  ["other","Other catches","Jellies, algae and seaweed."]
+  ["other","Other catches","Jellies, algae and seaweed."],
+  ["sve","Stardew Valley Expanded","Fish added by the mod \u2013 you'll need SVE installed."]
 ];
 const kindOf = f => f.kind === "legendary2" ? "legendary" : f.kind;
 const fmtH = h => { const m = Math.round((h % 1) * 60); h = Math.floor(h) % 24; return ((h % 12) || 12) + (m ? ":" + String(m).padStart(2,"0") : "") + (h >= 12 ? "pm" : "am"); };
@@ -580,7 +582,7 @@ function fishCard(f){
   const price = f.price ? `<span class="price"><svg aria-hidden="true"><use href="#g-coin"/></svg>${f.price}g</span>` : "";
   const src = ASSETS.items[f.name];
   const ic = src ? `<img src="${src}" alt="" width="48" height="48" loading="lazy" decoding="async">` : `<b>${esc(f.name[0])}</b>`;
-  const url = wikiUrl(f.name, false);
+  const url = wikiUrl(f.name, f.kind === "sve");
   let when = "";
   if (f.time){
     const wx = f.weather === "sun" ? `<span class="chip sun"><svg aria-hidden="true"><use href="#g-Summer"/></svg>Sunny only</span>` : f.weather === "rain" ? `<span class="chip rain"><svg aria-hidden="true"><use href="#g-rain"/></svg>Rain only</span>` : "";
@@ -588,7 +590,7 @@ function fishCard(f){
   }
   const where = `<div class="where">${f.loc.map(l => `<span class="chip">${esc(l)}</span>`).join("")}</div>`;
   const note = f.note ? `<p class="note">${esc(f.note)}</p>` : (f.trap ? `<p class="note">Trap chance ${esc(f.trap)}</p>` : "");
-  const stats = f.diff ? `<div class="stats"><div class="meter"><span class="lab">Difficulty ${f.diff}${f.behavior ? " · " + esc(f.behavior) : ""}</span><div class="bar"><b style="width:${Math.min(100, f.diff / 110 * 100)}%"></b></div></div><div class="stat"><span class="lab">Size</span><b>${esc(f.size)}"</b></div><div class="stat"><span class="lab">XP</span><b>${f.xp}</b></div></div>` : "";
+  const stats = f.diff ? `<div class="stats"><div class="meter"><span class="lab">Difficulty ${f.diff}${f.behavior ? " · " + esc(f.behavior) : ""}</span><div class="bar"><b style="width:${Math.min(100, f.diff / 110 * 100)}%"></b></div></div>${f.size ? `<div class="stat"><span class="lab">Size</span><b>${esc(f.size)}"</b></div>` : ""}<div class="stat"><span class="lab">XP</span><b>${f.xp ?? "\u2014"}</b></div></div>` : "";
   const lovers = loversOf(f.name);
   const u = f.used || {};
   const bundles = (u.bundles || []).map(b => `<span class="chip" title="Community Center bundle">${esc(b)} bundle</span>`).join("");

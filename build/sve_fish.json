@@ -1,0 +1,1731 @@
+[
+ {
+  "name": "Alligator",
+  "kind": "sve",
+  "img": "Alligator.png",
+  "price": 400,
+  "loc": [
+   "Forbidden Maze"
+  ],
+  "groups": [
+   "Expanded areas"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 75,
+  "behavior": "mixed",
+  "xp": null,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Arrowhead Shark",
+  "kind": "sve",
+  "img": "Arrowhead Shark.png",
+  "price": 700,
+  "loc": [
+   "Fable Reef"
+  ],
+  "groups": [
+   "Ginger Island"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 95,
+  "behavior": "sinker",
+  "xp": null,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Baby Lunaloo",
+  "kind": "sve",
+  "img": "Baby Lunaloo.png",
+  "price": 35,
+  "loc": [
+   "Ginger Island",
+   "Fable Reef"
+  ],
+  "groups": [
+   "Ginger Island"
+  ],
+  "note": "",
+  "time": [
+   [
+    17,
+    26
+   ]
+  ],
+  "timeRaw": "5PM - 2AM",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 15,
+  "behavior": "sinker",
+  "xp": 8,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Barred Knifejaw",
+  "kind": "sve",
+  "img": "Barred Knifejaw.png",
+  "price": 250,
+  "loc": [
+   "Ginger Island",
+   "Fable Reef"
+  ],
+  "groups": [
+   "Ginger Island"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    20
+   ]
+  ],
+  "timeRaw": "6AM - 8PM",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 65,
+  "behavior": "dart",
+  "xp": null,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Blue Tang",
+  "kind": "sve",
+  "img": "Blue Tang.png",
+  "price": 130,
+  "loc": [
+   "Ginger Island",
+   "Fable Reef"
+  ],
+  "groups": [
+   "Ginger Island"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    20
+   ]
+  ],
+  "timeRaw": "6AM - 8PM",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 30,
+  "behavior": "mixed",
+  "xp": null,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Bonefish",
+  "kind": "sve",
+  "img": "Bonefish.png",
+  "price": 200,
+  "loc": [
+   "Crimson Badlands"
+  ],
+  "groups": [
+   "Expanded areas"
+  ],
+  "note": "Requires fishing level 5.",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 70,
+  "behavior": "sinker",
+  "xp": 26,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Bull Trout",
+  "kind": "sve",
+  "img": "Bull Trout.png",
+  "price": 185,
+  "loc": [
+   "Forest",
+   "Forest West",
+   "The Mountain",
+   "Adventurer Summit",
+   "Highlands River"
+  ],
+  "groups": [
+   "River",
+   "Forest Pond",
+   "Expanded areas",
+   "Mountain Lake"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "Fall Winter (Summer and Winter in Forest West)",
+  "weather": "any",
+  "size": "",
+  "diff": 45,
+  "behavior": "mixed",
+  "xp": 18,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Butterfish",
+  "kind": "sve",
+  "img": "Butterfish.png",
+  "price": 200,
+  "loc": [
+   "Forest West",
+   "Shearwater Bridge"
+  ],
+  "groups": [
+   "Expanded areas"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall"
+  ],
+  "seasonNote": "Spring Summer Fall ( Summer in Forest West)",
+  "weather": "sun",
+  "size": "",
+  "diff": 75,
+  "behavior": "dart",
+  "xp": 28,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Glazed Butterfish",
+    "Andy",
+    "Gus",
+    "Victor",
+    "Willy"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Clownfish",
+  "kind": "sve",
+  "img": "Clownfish.png",
+  "price": 70,
+  "loc": [
+   "Ginger Island"
+  ],
+  "groups": [
+   "Ginger Island"
+  ],
+  "note": "Requires fishing level 3.",
+  "time": [
+   [
+    10,
+    17
+   ]
+  ],
+  "timeRaw": "10AM - 5PM",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 45,
+  "behavior": "dart",
+  "xp": 18,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Daggerfish",
+  "kind": "sve",
+  "img": "Daggerfish.png",
+  "price": 200,
+  "loc": [
+   "Fable Reef"
+  ],
+  "groups": [
+   "Ginger Island"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 50,
+  "behavior": "dart",
+  "xp": 19,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Lance",
+    "Marlon"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Diamond Carp",
+  "kind": "sve",
+  "img": "Diamond Carp.png",
+  "price": 575,
+  "loc": [
+   "Diamond Cavern"
+  ],
+  "groups": [
+   "Expanded areas"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 70,
+  "behavior": "sinker",
+  "xp": null,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Dulse Seaweed",
+  "kind": "sve",
+  "img": "Dulse Seaweed.png",
+  "price": 35,
+  "loc": [
+   "Blue Moon Vineyard",
+   "Fable Reef",
+   "Beach"
+  ],
+  "groups": [
+   "Expanded areas",
+   "Ginger Island",
+   "Ocean"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "'''Beach & Blue Moon Vineyard''' Spring Winter '''Fable Reef:''' All",
+  "weather": "any",
+  "size": "",
+  "diff": 1,
+  "behavior": "sinker",
+  "xp": 3,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Seaweed Salad"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Fiber Goby",
+  "kind": "sve",
+  "img": "Fiber Goby.png",
+  "price": 250,
+  "loc": [
+   "Highlands Ruins"
+  ],
+  "groups": [
+   "Expanded areas"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 60,
+  "behavior": "sinker",
+  "xp": null,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Frog",
+  "kind": "sve",
+  "img": "Frog.png",
+  "price": 100,
+  "loc": [
+   "Mountain"
+  ],
+  "groups": [
+   "Mountain Lake"
+  ],
+  "note": "Requires fishing level 5.",
+  "time": [
+   [
+    18,
+    26
+   ]
+  ],
+  "timeRaw": "6PM - 2AM",
+  "seasons": [
+   "Spring",
+   "Summer"
+  ],
+  "seasonNote": "Spring Summer",
+  "weather": "rain",
+  "size": "",
+  "diff": 70,
+  "behavior": "sinker",
+  "xp": 26,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Frog Legs",
+    "Morgan",
+    "Abigail",
+    "Sebastian",
+    "Vincent"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Gar",
+  "kind": "sve",
+  "img": "Gar.png",
+  "price": 175,
+  "loc": [
+   "Forest"
+  ],
+  "groups": [
+   "River",
+   "Forest Pond"
+  ],
+  "note": "Requires fishing level 5.",
+  "time": [
+   [
+    6,
+    20
+   ]
+  ],
+  "timeRaw": "6AM - 8PM",
+  "seasons": [
+   "Summer",
+   "Fall"
+  ],
+  "seasonNote": "Summer Fall",
+  "weather": "rain",
+  "size": "",
+  "diff": 85,
+  "behavior": "mixed",
+  "xp": null,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Gemfish",
+  "kind": "sve",
+  "img": "Gemfish.png",
+  "price": 800,
+  "loc": [
+   "Highlands Cavern"
+  ],
+  "groups": [
+   "Expanded areas"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 100,
+  "behavior": "sinker",
+  "xp": 36,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Dwarf",
+    "Lance"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Glowfish",
+  "kind": "sve",
+  "img": "Goldenfish.png",
+  "price": 150,
+  "loc": [
+   "Sprite Spring",
+   "Junimo Woods"
+  ],
+  "groups": [
+   "Expanded areas"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 60,
+  "behavior": "mixed",
+  "xp": 23,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Marlon"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Goldfish",
+  "kind": "sve",
+  "img": "Goldfish.png",
+  "price": 80,
+  "loc": [
+   "Blue Moon Vineyard (River)",
+   "Pelican Town (SVE)"
+  ],
+  "groups": [
+   "Expanded areas",
+   "River"
+  ],
+  "note": "",
+  "time": [
+   [
+    10,
+    17
+   ]
+  ],
+  "timeRaw": "10AM - 5PM",
+  "seasons": [
+   "Spring"
+  ],
+  "seasonNote": "Spring",
+  "weather": "sun",
+  "size": "",
+  "diff": 25,
+  "behavior": "dart",
+  "xp": null,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Jas"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Grass Carp",
+  "kind": "sve",
+  "img": "Grass Carp.png",
+  "price": 150,
+  "loc": [
+   "Secret Woods"
+  ],
+  "groups": [
+   "Secret Woods"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer"
+  ],
+  "seasonNote": "Spring Summer",
+  "weather": "any",
+  "size": "",
+  "diff": 85,
+  "behavior": "mixed",
+  "xp": 31,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Highlands Bass",
+  "kind": "sve",
+  "img": "Highlands Bass.png",
+  "price": 200,
+  "loc": [
+   "Highlands River"
+  ],
+  "groups": [
+   "Expanded areas"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 45,
+  "behavior": "mixed",
+  "xp": null,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "King Salmon",
+  "kind": "sve",
+  "img": "King Salmon.png",
+  "price": 320,
+  "loc": [
+   "Forest West"
+  ],
+  "groups": [
+   "Expanded areas"
+  ],
+  "note": "Requires fishing level 8.",
+  "time": [
+   [
+    6,
+    20
+   ]
+  ],
+  "timeRaw": "6AM - 8PM",
+  "seasons": [
+   "Spring",
+   "Summer"
+  ],
+  "seasonNote": "Spring Summer",
+  "weather": "any",
+  "size": "",
+  "diff": 80,
+  "behavior": "dart",
+  "xp": 29,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Kittyfish",
+  "kind": "sve",
+  "img": "Kittyfish.png",
+  "price": 250,
+  "loc": [
+   "Shearwater Bridge"
+  ],
+  "groups": [
+   "Expanded areas"
+  ],
+  "note": "Requires seeing the Kittyfish introductory event. Requires fishing level 8.",
+  "time": [
+   [
+    6,
+    14
+   ]
+  ],
+  "timeRaw": "6AM - 2PM",
+  "seasons": [
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "Fall Winter",
+  "weather": "any",
+  "size": "",
+  "diff": 85,
+  "behavior": "mixed",
+  "xp": 31,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Morgan"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Lunaloo",
+  "kind": "sve",
+  "img": "Lunaloo.png",
+  "price": 100,
+  "loc": [
+   "Ginger Island",
+   "Fable Reef"
+  ],
+  "groups": [
+   "Ginger Island"
+  ],
+  "note": "Requires fishing level 5.",
+  "time": [
+   [
+    17,
+    26
+   ]
+  ],
+  "timeRaw": "5PM - 2AM",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "Any Season",
+  "weather": "any",
+  "size": "",
+  "diff": 70,
+  "behavior": "floater",
+  "xp": 26,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Meteor Carp",
+  "kind": "sve",
+  "img": "Meteor Carp.png",
+  "price": 175,
+  "loc": [
+   "Sprite Spring",
+   "Junimo Woods"
+  ],
+  "groups": [
+   "Expanded areas"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 80,
+  "behavior": "sinker",
+  "xp": 29,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Krobus"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Minnow",
+  "kind": "sve",
+  "img": "Minnow.png",
+  "price": 20,
+  "loc": [
+   "Farm",
+   "Town",
+   "Forest",
+   "Mountain",
+   "Blue Moon Vineyard",
+   "Shearwater Bridge",
+   "Adventurer Summit"
+  ],
+  "groups": [
+   "Farm",
+   "River",
+   "Forest Pond",
+   "Mountain Lake",
+   "Expanded areas"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    18
+   ]
+  ],
+  "timeRaw": "6AM - 6PM",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "'''Farm & Adventurer Summit:'''Spring Summer Fall '''Everywhere else:''' All",
+  "weather": "sun",
+  "size": "",
+  "diff": 1,
+  "behavior": "sinker",
+  "xp": 3,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Ocean Sunfish",
+  "kind": "sve",
+  "img": "Ocean Sunfish.png",
+  "price": 650,
+  "loc": [
+   "Ginger Island",
+   "Fable Reef"
+  ],
+  "groups": [
+   "Ginger Island"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "sun",
+  "size": "",
+  "diff": 90,
+  "behavior": "floater",
+  "xp": null,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Puppyfish",
+  "kind": "sve",
+  "img": "Puppyfish.png",
+  "price": 250,
+  "loc": [
+   "Forest West",
+   "Shearwater Bridge"
+  ],
+  "groups": [
+   "Expanded areas"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall"
+  ],
+  "seasonNote": "'''Shearwater Bridge:''' Spring Summer Fall '''Forest West:''' Summer",
+  "weather": "any",
+  "size": "",
+  "diff": 85,
+  "behavior": "mixed",
+  "xp": 31,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Big Bark Burger",
+    "Sophia"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Radioactive Bass",
+  "kind": "sve",
+  "img": "Radioactive Bass.png",
+  "price": 500,
+  "loc": [
+   "The Sewers"
+  ],
+  "groups": [
+   "Sewers"
+  ],
+  "note": "Requires fishing level 10.",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 90,
+  "behavior": "floater",
+  "xp": 33,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Razor Trout",
+  "kind": "sve",
+  "img": "Razor Trout.png",
+  "price": 400,
+  "loc": [
+   "Town"
+  ],
+  "groups": [
+   "River"
+  ],
+  "note": "Requires completing the expanded Joja route storyline. Requires fishing level 10.",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 85,
+  "behavior": "dart",
+  "xp": 31,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Seahorse",
+  "kind": "sve",
+  "img": "Seahorse.png",
+  "price": 60,
+  "loc": [
+   "Ginger Island",
+   "Fable Reef"
+  ],
+  "groups": [
+   "Ginger Island"
+  ],
+  "note": "",
+  "time": [
+   [
+    8,
+    17
+   ]
+  ],
+  "timeRaw": "8AM - 5PM",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 25,
+  "behavior": "mixed",
+  "xp": 11,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Sea Sponge",
+  "kind": "sve",
+  "img": "Sea Sponge.png",
+  "price": 75,
+  "loc": [
+   "Ginger Island",
+   "Fable Reef"
+  ],
+  "groups": [
+   "Ginger Island"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 40,
+  "behavior": "sinker",
+  "xp": 16,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Shark",
+  "kind": "sve",
+  "img": "Shark.png",
+  "price": 800,
+  "loc": [
+   "Ginger Island",
+   "Fable Reef"
+  ],
+  "groups": [
+   "Ginger Island"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 100,
+  "behavior": "dart",
+  "xp": null,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Shiny Lunaloo",
+  "kind": "sve",
+  "img": "Shiny Lunaloo.png",
+  "price": 400,
+  "loc": [
+   "Ginger Island",
+   "Fable Reef"
+  ],
+  "groups": [
+   "Ginger Island"
+  ],
+  "note": "Requires fishing level 8.",
+  "time": [
+   [
+    17,
+    26
+   ]
+  ],
+  "timeRaw": "5PM - 2AM",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 110,
+  "behavior": "floater",
+  "xp": 39,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Magnus"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Snatcher Worm",
+  "kind": "sve",
+  "img": "Snatcher Worm.png",
+  "price": 280,
+  "loc": [
+   "Mutant Bug Lair"
+  ],
+  "groups": [
+   "Bug Lair"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 75,
+  "behavior": "dart",
+  "xp": 28,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Starfish",
+  "kind": "sve",
+  "img": "Starfish.png",
+  "price": 150,
+  "loc": [
+   "Beach",
+   "Ginger Island"
+  ],
+  "groups": [
+   "Ocean",
+   "Ginger Island"
+  ],
+  "note": "Requires fishing level 5.",
+  "time": [
+   [
+    6,
+    22
+   ]
+  ],
+  "timeRaw": "6AM - 10PM",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "'''Beach:''' Spring Summer Winter '''Ginger Island:''' All",
+  "weather": "any",
+  "size": "",
+  "diff": 75,
+  "behavior": "sinker",
+  "xp": 28,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Swamp Crab",
+  "kind": "sve",
+  "img": "Swamp Crab.png",
+  "price": 150,
+  "loc": [
+   "Forbidden Maze"
+  ],
+  "groups": [
+   "Expanded areas"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 35,
+  "behavior": "sinker",
+  "xp": null,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Tadpole",
+  "kind": "sve",
+  "img": "Tadpole.png",
+  "price": 15,
+  "loc": [
+   "Mountain"
+  ],
+  "groups": [
+   "Mountain Lake"
+  ],
+  "note": "Requires fishing level 5.",
+  "time": [
+   [
+    18,
+    26
+   ]
+  ],
+  "timeRaw": "6PM - 2AM",
+  "seasons": [
+   "Spring",
+   "Summer"
+  ],
+  "seasonNote": "Spring Summer",
+  "weather": "any",
+  "size": "",
+  "diff": 3,
+  "behavior": "floater",
+  "xp": null,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Torpedo Trout",
+  "kind": "sve",
+  "img": "Torpedo Trout.png",
+  "price": 300,
+  "loc": [
+   "Fable Reef"
+  ],
+  "groups": [
+   "Ginger Island"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 70,
+  "behavior": "dart",
+  "xp": 26,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Lance"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Turretfish",
+  "kind": "sve",
+  "img": "Turretfish.png",
+  "price": 10000,
+  "loc": [
+   "Fable Reef"
+  ],
+  "groups": [
+   "Ginger Island"
+  ],
+  "note": "Requires fishing level 10.",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 110,
+  "behavior": "dart",
+  "xp": null,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Undeadfish",
+  "kind": "sve",
+  "img": "Undeadfish.png",
+  "price": 600,
+  "loc": [
+   "Crimson Badlands"
+  ],
+  "groups": [
+   "Expanded areas"
+  ],
+  "note": "Requires fishing level 5.",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 80,
+  "behavior": "mixed",
+  "xp": 29,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Viper Eel",
+  "kind": "sve",
+  "img": "Viper Eel.png",
+  "price": 600,
+  "loc": [
+   "Fable Reef"
+  ],
+  "groups": [
+   "Ginger Island"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 80,
+  "behavior": "mixed",
+  "xp": null,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Void Eel",
+  "kind": "sve",
+  "img": "Void Eel.png",
+  "price": 450,
+  "loc": [
+   "Witch Swamp"
+  ],
+  "groups": [
+   "Witch's Swamp"
+  ],
+  "note": "Requires fishing level 8.",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 100,
+  "behavior": "mixed",
+  "xp": 36,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Void Delight"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Water Grub",
+  "kind": "sve",
+  "img": "Water Grub.png",
+  "price": 170,
+  "loc": [
+   "Mutant Bug Lair"
+  ],
+  "groups": [
+   "Bug Lair"
+  ],
+  "note": "",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All",
+  "weather": "any",
+  "size": "",
+  "diff": 60,
+  "behavior": "sinker",
+  "xp": 23,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Wolf Snapper",
+  "kind": "sve",
+  "img": "Wolf Snapper.png",
+  "price": 4000,
+  "loc": [
+   "Shearwater Bridge"
+  ],
+  "groups": [
+   "Expanded areas"
+  ],
+  "note": "Requires fishing level 10.",
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall"
+  ],
+  "seasonNote": "Spring Summer Fall",
+  "weather": "any",
+  "size": "",
+  "diff": 110,
+  "behavior": "dart",
+  "xp": null,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ }
+]

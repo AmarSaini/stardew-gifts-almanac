@@ -73,7 +73,7 @@ for g in UNIVERSAL:
 print("missing:",sorted(set(missing)))
 tpl=open(f"{ROOT}/build/template.html").read()
 out=tpl.replace("/*ASSETS*/",json.dumps({"characters":chars,"items":items},ensure_ascii=False)).replace("/*DATA*/",json.dumps(DATA,ensure_ascii=False)).replace("/*BDAYS*/",json.dumps(BIRTHDAYS))
-FISH=json.load(open(f"{ROOT}/build/fish.json"))
+FISH=json.load(open(f"{ROOT}/build/fish.json"))+json.load(open(f"{ROOT}/build/sve_fish.json"))
 for f in FISH:
     for n in [f["name"]]+f.get("used",{}).get("recipes",[]):
         if has("items",n): items[n]=f"assets/items/{slug(n)}.png"
