@@ -167,6 +167,12 @@
     font-size:.95rem;font-weight:500;
   }
   .ic{width:28px;height:28px;flex:none;display:block;object-fit:contain;}
+  a.tag,a.gift,a.portrait,a.name{color:inherit;text-decoration:none;}
+  a.tag,a.gift{transition:transform .08s;}
+  a.tag:hover,a.gift:hover{background:#fff;border-color:var(--gold-lo);transform:translateY(-2px);}
+  a.tag:active,a.gift:active{transform:translateY(0);}
+  a.portrait:hover{border-color:var(--gold-lo);}
+  a.name:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
 
   /* ---------- Sections ---------- */
   .section{margin-top:clamp(22px,4vw,38px);}
@@ -319,8 +325,14 @@ function icon(item){
   const src = ASSETS.items[key];
   return src ? `<img class="ic" src="${src}" alt="" width="28" height="28" loading="lazy" decoding="async">` : `<span class="ic"></span>`;
 }
-const tag = item => `<span class="tag">${icon(item)}${esc(item)}</span>`;
-const gift = item => `<li class="gift${ANY[item]?" any":""}">${icon(item)}${esc(item)}</li>`;
+const VW = "https://stardewvalleywiki.com/", SW = "https://stardewvalleyexpanded.wiki.gg/wiki/";
+const SVE_ITEMS = new Set(["Butterfish","King Salmon","Glazed Butterfish","Aged Blue Moon Wine","Blue Moon Wine","Swirl Stone","Void Shard","Daggerfish","Torpedo Trout","Gemfish","Monster Mushroom","Green Mushroom","Armor Elixir","Hero Elixir","Haste Elixir","Void Delight","Big Bark Burger","Frog","Grampleton Orange Chicken","Puppyfish"]);
+const WIKI_PAGE = {"Any Gem (except Diamond)":"Gem","Any Flower (except Poppy)":"Flower","Any Vegetable (except Hops/Wheat)":"Vegetables","L. Goat Milk":"Large Goat Milk"};
+const wikiUrl = (name, sve) => (sve ? SW : VW) + encodeURIComponent((WIKI_PAGE[name] || name).replace(/ /g, "_")).replace(/%27/g, "'");
+const itemLink = (item, inner, cls) =>
+  `<a class="${cls}" href="${wikiUrl(item, SVE_ITEMS.has(item))}" target="_blank" rel="noopener" title="Open ${esc(item)} on the wiki">${inner}</a>`;
+const tag = item => itemLink(item, icon(item) + esc(item), "tag");
+const gift = item => `<li>${itemLink(item, icon(item) + esc(item), "gift" + (ANY[item] ? " any" : ""))}</li>`;
 
 function portrait(name){
   const src = ASSETS.characters[name];
@@ -332,9 +344,9 @@ function card([name, role, src, gifts]){
   return `<article class="card box r-${role}" data-name="${esc(name.toLowerCase())}" data-role="${role}" data-src="${src}" data-gifts="${esc(gifts.join("|").toLowerCase())}">
     <div class="in">
       <div class="head">
-        <div class="portrait">${portrait(name)}</div>
+        <a class="portrait" href="${wikiUrl(name, src===S)}" target="_blank" rel="noopener" title="Open ${esc(name)} on the wiki">${portrait(name)}</a>
         <div class="who">
-          <span class="name">${esc(name)}</span>
+          <a class="name" href="${wikiUrl(name, src===S)}" target="_blank" rel="noopener">${esc(name)}</a>
           <span class="badges"><span class="badge b-${role}">${ROLE[role]}</span>${src===S?'<span class="badge b-sve">SVE</span>':""}</span>
         </div>
       </div>
