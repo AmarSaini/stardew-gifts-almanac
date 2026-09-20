@@ -1,0 +1,2681 @@
+[
+ {
+  "name": "Pufferfish",
+  "kind": "pole",
+  "price": 200,
+  "loc": [
+   "Ocean",
+   "Ginger Island Oceans"
+  ],
+  "note": "",
+  "groups": [
+   "Ocean",
+   "Ginger Island"
+  ],
+  "time": [
+   [
+    12,
+    16
+   ]
+  ],
+  "timeRaw": "12pm – 4pm",
+  "seasons": [
+   "Summer"
+  ],
+  "seasonNote": "Summer (All Seasons on Ginger Island)",
+  "weather": "sun",
+  "size": "1–37",
+  "diff": 80,
+  "behavior": "floater",
+  "xp": 29,
+  "used": {
+   "bundles": [
+    "Specialty Fish"
+   ],
+   "loved": [
+    "Abigail"
+   ],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Anchovy",
+  "kind": "pole",
+  "price": 30,
+  "loc": [
+   "Ocean"
+  ],
+  "note": "",
+  "groups": [
+   "Ocean"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Anytime",
+  "seasons": [
+   "Spring",
+   "Fall"
+  ],
+  "seasonNote": "Spring Fall",
+  "weather": "any",
+  "size": "1–17",
+  "diff": 30,
+  "behavior": "dart",
+  "xp": 13,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Tuna",
+  "kind": "pole",
+  "price": 100,
+  "loc": [
+   "Ocean",
+   "Ginger Island Oceans"
+  ],
+  "note": "",
+  "groups": [
+   "Ocean",
+   "Ginger Island"
+  ],
+  "time": [
+   [
+    6,
+    19
+   ]
+  ],
+  "timeRaw": "6am – 7pm",
+  "seasons": [
+   "Summer",
+   "Winter"
+  ],
+  "seasonNote": "Summer Winter (All Seasons on Ginger Island)",
+  "weather": "any",
+  "size": "12–61",
+  "diff": 70,
+  "behavior": "smooth",
+  "xp": 26,
+  "used": {
+   "bundles": [
+    "Ocean Fish",
+    "Quality Fish"
+   ],
+   "loved": [],
+   "recipes": [
+    "Fish Taco"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Sardine",
+  "kind": "pole",
+  "price": 40,
+  "loc": [
+   "Ocean"
+  ],
+  "note": "",
+  "groups": [
+   "Ocean"
+  ],
+  "time": [
+   [
+    6,
+    19
+   ]
+  ],
+  "timeRaw": "6am – 7pm",
+  "seasons": [
+   "Spring",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "Spring Fall Winter",
+  "weather": "any",
+  "size": "1–13",
+  "diff": 30,
+  "behavior": "dart",
+  "xp": 13,
+  "used": {
+   "bundles": [
+    "Ocean Fish"
+   ],
+   "loved": [],
+   "recipes": [
+    "Dish O' The Sea"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Bream",
+  "kind": "pole",
+  "price": 45,
+  "loc": [
+   "Town River",
+   "Forest River"
+  ],
+  "note": "",
+  "groups": [
+   "River"
+  ],
+  "time": [
+   [
+    18,
+    26
+   ]
+  ],
+  "timeRaw": "6pm – 2am",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "12–31",
+  "diff": 35,
+  "behavior": "smooth",
+  "xp": 14,
+  "used": {
+   "bundles": [
+    "Night Fish"
+   ],
+   "loved": [],
+   "recipes": [
+    "Baked Fish"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Largemouth Bass",
+  "kind": "pole",
+  "price": 100,
+  "loc": [
+   "Mountain Lake"
+  ],
+  "note": "",
+  "groups": [
+   "Mountain Lake"
+  ],
+  "time": [
+   [
+    6,
+    19
+   ]
+  ],
+  "timeRaw": "6am – 7pm",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "11–31",
+  "diff": 50,
+  "behavior": "mixed",
+  "xp": 19,
+  "used": {
+   "bundles": [
+    "Lake Fish",
+    "Quality Fish"
+   ],
+   "loved": [],
+   "recipes": [
+    "Crispy Bass"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Smallmouth Bass",
+  "kind": "pole",
+  "price": 50,
+  "loc": [
+   "Town River",
+   "Forest Pond"
+  ],
+  "note": "",
+  "groups": [
+   "River",
+   "Forest Pond"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Anytime",
+  "seasons": [
+   "Spring",
+   "Fall"
+  ],
+  "seasonNote": "Spring Fall",
+  "weather": "any",
+  "size": "12–25",
+  "diff": 28,
+  "behavior": "mixed",
+  "xp": 12,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Rainbow Trout",
+  "kind": "pole",
+  "price": 65,
+  "loc": [
+   "Town River",
+   "Forest River",
+   "Mountain Lake"
+  ],
+  "note": "",
+  "groups": [
+   "River",
+   "Mountain Lake"
+  ],
+  "time": [
+   [
+    6,
+    19
+   ]
+  ],
+  "timeRaw": "6am – 7pm",
+  "seasons": [
+   "Summer"
+  ],
+  "seasonNote": "Summer",
+  "weather": "sun",
+  "size": "10–26",
+  "diff": 45,
+  "behavior": "mixed",
+  "xp": 18,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Trout Soup"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Salmon",
+  "kind": "pole",
+  "price": 75,
+  "loc": [
+   "Town River",
+   "Forest River",
+   "Forest Waterfalls"
+  ],
+  "note": "",
+  "groups": [
+   "River",
+   "Forest Pond"
+  ],
+  "time": [
+   [
+    6,
+    19
+   ]
+  ],
+  "timeRaw": "6am – 7pm",
+  "seasons": [
+   "Fall"
+  ],
+  "seasonNote": "Fall",
+  "weather": "any",
+  "size": "24–66",
+  "diff": 50,
+  "behavior": "mixed",
+  "xp": 19,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Salmon Dinner"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Walleye",
+  "kind": "pole",
+  "price": 105,
+  "loc": [
+   "Town River",
+   "Forest River",
+   "Forest Pond",
+   "Mountain Lake"
+  ],
+  "note": "",
+  "groups": [
+   "River",
+   "Forest Pond",
+   "Mountain Lake"
+  ],
+  "time": [
+   [
+    12,
+    26
+   ]
+  ],
+  "timeRaw": "12pm – 2am",
+  "seasons": [
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "Fall Winter with Rain Totem",
+  "weather": "rain",
+  "size": "10–41",
+  "diff": 45,
+  "behavior": "smooth",
+  "xp": 18,
+  "used": {
+   "bundles": [
+    "Night Fish",
+    "Quality Fish"
+   ],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Perch",
+  "kind": "pole",
+  "price": 55,
+  "loc": [
+   "Town River",
+   "Forest River",
+   "Forest Pond",
+   "Mountain Lake"
+  ],
+  "note": "",
+  "groups": [
+   "River",
+   "Forest Pond",
+   "Mountain Lake"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Anytime",
+  "seasons": [
+   "Winter"
+  ],
+  "seasonNote": "Winter",
+  "weather": "any",
+  "size": "10–25",
+  "diff": 35,
+  "behavior": "dart",
+  "xp": 14,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Carp",
+  "kind": "pole",
+  "price": 30,
+  "loc": [
+   "Mountain Lake",
+   "Secret Woods",
+   "Sewers",
+   "Mutant Bug Lair"
+  ],
+  "note": "",
+  "groups": [
+   "Mountain Lake",
+   "Secret Woods",
+   "Sewers",
+   "Bug Lair"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Anytime",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "15–51",
+  "diff": 15,
+  "behavior": "mixed",
+  "xp": 8,
+  "used": {
+   "bundles": [
+    "Lake Fish"
+   ],
+   "loved": [],
+   "recipes": [
+    "Carp Surprise"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Catfish",
+  "kind": "pole",
+  "price": 200,
+  "loc": [
+   "Town River",
+   "Forest River",
+   "Secret Woods",
+   "Witch's Swamp"
+  ],
+  "note": "",
+  "groups": [
+   "River",
+   "Secret Woods",
+   "Witch's Swamp"
+  ],
+  "time": [
+   [
+    6,
+    24
+   ]
+  ],
+  "timeRaw": "6am – 12am",
+  "seasons": [
+   "Spring",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "Spring Fall (Spring &amp; Summer in Secret Woods Pond) Winter with Rain Totem",
+  "weather": "rain",
+  "size": "12–73",
+  "diff": 75,
+  "behavior": "mixed",
+  "xp": 28,
+  "used": {
+   "bundles": [
+    "River Fish"
+   ],
+   "loved": [
+    "Willy"
+   ],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Pike",
+  "kind": "pole",
+  "price": 100,
+  "loc": [
+   "Town River",
+   "Forest River",
+   "Forest Pond"
+  ],
+  "note": "",
+  "groups": [
+   "River",
+   "Forest Pond"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Anytime",
+  "seasons": [
+   "Summer",
+   "Winter"
+  ],
+  "seasonNote": "Summer Winter",
+  "weather": "any",
+  "size": "15–61",
+  "diff": 60,
+  "behavior": "dart",
+  "xp": 23,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Sunfish",
+  "kind": "pole",
+  "price": 30,
+  "loc": [
+   "Town River",
+   "Forest River"
+  ],
+  "note": "",
+  "groups": [
+   "River"
+  ],
+  "time": [
+   [
+    6,
+    19
+   ]
+  ],
+  "timeRaw": "6am – 7pm",
+  "seasons": [
+   "Spring",
+   "Summer"
+  ],
+  "seasonNote": "Spring Summer",
+  "weather": "sun",
+  "size": "5–16",
+  "diff": 30,
+  "behavior": "mixed",
+  "xp": 13,
+  "used": {
+   "bundles": [
+    "River Fish"
+   ],
+   "loved": [],
+   "recipes": [
+    "Baked Fish"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Red Mullet",
+  "kind": "pole",
+  "price": 75,
+  "loc": [
+   "Ocean"
+  ],
+  "note": "",
+  "groups": [
+   "Ocean"
+  ],
+  "time": [
+   [
+    6,
+    19
+   ]
+  ],
+  "timeRaw": "6am – 7pm",
+  "seasons": [
+   "Summer",
+   "Winter"
+  ],
+  "seasonNote": "Summer Winter",
+  "weather": "any",
+  "size": "8–23",
+  "diff": 55,
+  "behavior": "smooth",
+  "xp": 21,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Herring",
+  "kind": "pole",
+  "price": 30,
+  "loc": [
+   "Ocean"
+  ],
+  "note": "",
+  "groups": [
+   "Ocean"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Anytime",
+  "seasons": [
+   "Spring",
+   "Winter"
+  ],
+  "seasonNote": "Spring Winter",
+  "weather": "any",
+  "size": "8–21",
+  "diff": 25,
+  "behavior": "dart",
+  "xp": 11,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Eel",
+  "kind": "pole",
+  "price": 85,
+  "loc": [
+   "Ocean"
+  ],
+  "note": "",
+  "groups": [
+   "Ocean"
+  ],
+  "time": [
+   [
+    16,
+    26
+   ]
+  ],
+  "timeRaw": "4pm – 2am",
+  "seasons": [
+   "Spring",
+   "Fall"
+  ],
+  "seasonNote": "Spring Fall",
+  "weather": "rain",
+  "size": "12–81",
+  "diff": 70,
+  "behavior": "smooth",
+  "xp": 26,
+  "used": {
+   "bundles": [
+    "Night Fish"
+   ],
+   "loved": [],
+   "recipes": [
+    "Fried Eel",
+    "Spicy Eel"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Octopus",
+  "kind": "pole",
+  "price": 150,
+  "loc": [
+   "Ocean",
+   "Ginger Island Oceans"
+  ],
+  "note": "",
+  "groups": [
+   "Ocean",
+   "Ginger Island"
+  ],
+  "time": [
+   [
+    6,
+    13
+   ]
+  ],
+  "timeRaw": "6am – 1pm",
+  "seasons": [
+   "Summer"
+  ],
+  "seasonNote": "Summer (All Seasons on Ginger Island)",
+  "weather": "any",
+  "size": "12–49",
+  "diff": 95,
+  "behavior": "sinker",
+  "xp": 34,
+  "used": {
+   "bundles": [
+    "Master Fishers"
+   ],
+   "loved": [
+    "Willy"
+   ],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Red Snapper",
+  "kind": "pole",
+  "price": 50,
+  "loc": [
+   "Ocean"
+  ],
+  "note": "",
+  "groups": [
+   "Ocean"
+  ],
+  "time": [
+   [
+    6,
+    19
+   ]
+  ],
+  "timeRaw": "6am – 7pm",
+  "seasons": [
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "Summer Fall Winter with Rain Totem",
+  "weather": "rain",
+  "size": "8–26",
+  "diff": 40,
+  "behavior": "mixed",
+  "xp": 16,
+  "used": {
+   "bundles": [
+    "Ocean Fish"
+   ],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Squid",
+  "kind": "pole",
+  "price": 80,
+  "loc": [
+   "Ocean"
+  ],
+  "note": "",
+  "groups": [
+   "Ocean"
+  ],
+  "time": [
+   [
+    18,
+    26
+   ]
+  ],
+  "timeRaw": "6pm – 2am",
+  "seasons": [
+   "Winter"
+  ],
+  "seasonNote": "Winter",
+  "weather": "any",
+  "size": "12–49",
+  "diff": 75,
+  "behavior": "sinker",
+  "xp": 28,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Fried Calamari"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Sea Cucumber",
+  "kind": "pole",
+  "price": 75,
+  "loc": [
+   "Ocean"
+  ],
+  "note": "",
+  "groups": [
+   "Ocean"
+  ],
+  "time": [
+   [
+    6,
+    19
+   ]
+  ],
+  "timeRaw": "6am – 7pm",
+  "seasons": [
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "Fall Winter",
+  "weather": "any",
+  "size": "3–21",
+  "diff": 40,
+  "behavior": "sinker",
+  "xp": 16,
+  "used": {
+   "bundles": [],
+   "loved": [
+    "Willy"
+   ],
+   "recipes": [
+    "Lucky Lunch"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Super Cucumber",
+  "kind": "pole",
+  "price": 250,
+  "loc": [
+   "Ocean",
+   "Ginger Island Oceans"
+  ],
+  "note": "",
+  "groups": [
+   "Ocean",
+   "Ginger Island"
+  ],
+  "time": [
+   [
+    18,
+    26
+   ]
+  ],
+  "timeRaw": "6pm – 2am",
+  "seasons": [
+   "Summer",
+   "Fall"
+  ],
+  "seasonNote": "Summer Fall (All Seasons on Ginger Island)",
+  "weather": "any",
+  "size": "12–37",
+  "diff": 80,
+  "behavior": "sinker",
+  "xp": 29,
+  "used": {
+   "bundles": [],
+   "loved": [
+    "Wizard"
+   ],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Ghostfish",
+  "kind": "pole",
+  "price": 45,
+  "loc": [
+   "Mines (Floors 20 & 60)",
+   "Ghost Drops"
+  ],
+  "note": "",
+  "groups": [
+   "Mines"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Anytime",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "10–36",
+  "diff": 50,
+  "behavior": "mixed",
+  "xp": 19,
+  "used": {
+   "bundles": [
+    "Specialty Fish"
+   ],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Stonefish",
+  "kind": "pole",
+  "price": 300,
+  "loc": [
+   "Mines (Floor 20)"
+  ],
+  "note": "",
+  "groups": [
+   "Mines"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Anytime",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "14–16",
+  "diff": 65,
+  "behavior": "sinker",
+  "xp": 24,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Ice Pip",
+  "kind": "pole",
+  "price": 500,
+  "loc": [
+   "Mines (Floor 60)"
+  ],
+  "note": "",
+  "groups": [
+   "Mines"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Anytime",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "7–9",
+  "diff": 85,
+  "behavior": "dart",
+  "xp": 31,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Lava Eel",
+  "kind": "pole",
+  "price": 700,
+  "loc": [
+   "Mines (Floor 100)",
+   "Volcano Caldera"
+  ],
+  "note": "",
+  "groups": [
+   "Mines",
+   "Ginger Island"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Anytime",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "31–33",
+  "diff": 90,
+  "behavior": "mixed",
+  "xp": 33,
+  "used": {
+   "bundles": [
+    "Master Fishers"
+   ],
+   "loved": [
+    "Dwarf"
+   ],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Sandfish",
+  "kind": "pole",
+  "price": 75,
+  "loc": [
+   "Desert"
+  ],
+  "note": "",
+  "groups": [
+   "Desert"
+  ],
+  "time": [
+   [
+    6,
+    20
+   ]
+  ],
+  "timeRaw": "6am – 8pm",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "8–25",
+  "diff": 65,
+  "behavior": "mixed",
+  "xp": 24,
+  "used": {
+   "bundles": [
+    "Specialty Fish"
+   ],
+   "loved": [
+    "Penny"
+   ],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Scorpion Carp",
+  "kind": "pole",
+  "price": 150,
+  "loc": [
+   "Desert"
+  ],
+  "note": "Requires fishing level 4",
+  "groups": [
+   "Desert"
+  ],
+  "time": [
+   [
+    6,
+    20
+   ]
+  ],
+  "timeRaw": "6am – 8pm",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "12–33",
+  "diff": 90,
+  "behavior": "dart",
+  "xp": 33,
+  "used": {
+   "bundles": [
+    "Master Fishers"
+   ],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Flounder",
+  "kind": "pole",
+  "price": 100,
+  "loc": [
+   "Ocean",
+   "Ginger Island Oceans"
+  ],
+  "note": "",
+  "groups": [
+   "Ocean",
+   "Ginger Island"
+  ],
+  "time": [
+   [
+    6,
+    20
+   ]
+  ],
+  "timeRaw": "6am – 8pm",
+  "seasons": [
+   "Spring",
+   "Summer"
+  ],
+  "seasonNote": "Spring Summer (All Seasons on Ginger Island)",
+  "weather": "any",
+  "size": "4–17",
+  "diff": 50,
+  "behavior": "sinker",
+  "xp": 19,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Seafoam Pudding"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Midnight Carp",
+  "kind": "pole",
+  "price": 150,
+  "loc": [
+   "Forest Pond",
+   "Mountain Lake",
+   "Ginger Island Rivers"
+  ],
+  "note": "",
+  "groups": [
+   "Forest Pond",
+   "Mountain Lake",
+   "Ginger Island"
+  ],
+  "time": [
+   [
+    22,
+    26
+   ]
+  ],
+  "timeRaw": "10pm – 2am",
+  "seasons": [
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "Fall Winter (All Seasons on Ginger Island)",
+  "weather": "any",
+  "size": "12–53",
+  "diff": 55,
+  "behavior": "mixed",
+  "xp": 21,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Seafoam Pudding"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Sturgeon",
+  "kind": "pole",
+  "price": 200,
+  "loc": [
+   "Mountain Lake"
+  ],
+  "note": "",
+  "groups": [
+   "Mountain Lake"
+  ],
+  "time": [
+   [
+    6,
+    19
+   ]
+  ],
+  "timeRaw": "6am – 7pm",
+  "seasons": [
+   "Summer",
+   "Winter"
+  ],
+  "seasonNote": "Summer Winter",
+  "weather": "any",
+  "size": "12–61",
+  "diff": 78,
+  "behavior": "mixed",
+  "xp": 29,
+  "used": {
+   "bundles": [
+    "Lake Fish"
+   ],
+   "loved": [
+    "Willy"
+   ],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Tiger Trout",
+  "kind": "pole",
+  "price": 150,
+  "loc": [
+   "Town River",
+   "Forest River"
+  ],
+  "note": "",
+  "groups": [
+   "River"
+  ],
+  "time": [
+   [
+    6,
+    19
+   ]
+  ],
+  "timeRaw": "6am – 7pm",
+  "seasons": [
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "Fall Winter",
+  "weather": "any",
+  "size": "10–21",
+  "diff": 60,
+  "behavior": "dart",
+  "xp": 23,
+  "used": {
+   "bundles": [
+    "River Fish"
+   ],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Bullhead",
+  "kind": "pole",
+  "price": 75,
+  "loc": [
+   "Mountain Lake"
+  ],
+  "note": "",
+  "groups": [
+   "Mountain Lake"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Anytime",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "12–31",
+  "diff": 46,
+  "behavior": "smooth",
+  "xp": 18,
+  "used": {
+   "bundles": [
+    "Lake Fish"
+   ],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Tilapia",
+  "kind": "pole",
+  "price": 75,
+  "loc": [
+   "Ocean",
+   "Ginger Island Rivers"
+  ],
+  "note": "",
+  "groups": [
+   "Ocean",
+   "Ginger Island"
+  ],
+  "time": [
+   [
+    6,
+    14
+   ]
+  ],
+  "timeRaw": "6am – 2pm",
+  "seasons": [
+   "Summer",
+   "Fall"
+  ],
+  "seasonNote": "Summer Fall (All Seasons on Ginger Island)",
+  "weather": "any",
+  "size": "11–31",
+  "diff": 50,
+  "behavior": "mixed",
+  "xp": 19,
+  "used": {
+   "bundles": [
+    "Ocean Fish"
+   ],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Chub",
+  "kind": "pole",
+  "price": 50,
+  "loc": [
+   "Forest River",
+   "Mountain Lake"
+  ],
+  "note": "",
+  "groups": [
+   "River",
+   "Mountain Lake"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Anytime",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "12–25",
+  "diff": 35,
+  "behavior": "dart",
+  "xp": 14,
+  "used": {
+   "bundles": [
+    "Field Research"
+   ],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Dorado",
+  "kind": "pole",
+  "price": 100,
+  "loc": [
+   "Forest River"
+  ],
+  "note": "",
+  "groups": [
+   "River"
+  ],
+  "time": [
+   [
+    6,
+    19
+   ]
+  ],
+  "timeRaw": "6am – 7pm",
+  "seasons": [
+   "Summer"
+  ],
+  "seasonNote": "Summer",
+  "weather": "any",
+  "size": "24–33",
+  "diff": 78,
+  "behavior": "mixed",
+  "xp": 29,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Albacore",
+  "kind": "pole",
+  "price": 75,
+  "loc": [
+   "Ocean"
+  ],
+  "note": "",
+  "groups": [
+   "Ocean"
+  ],
+  "time": [
+   [
+    6,
+    11
+   ],
+   [
+    18,
+    26
+   ]
+  ],
+  "timeRaw": "6am – 11am 6pm – 2am",
+  "seasons": [
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "Fall Winter",
+  "weather": "any",
+  "size": "20–41",
+  "diff": 60,
+  "behavior": "mixed",
+  "xp": 23,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Shad",
+  "kind": "pole",
+  "price": 60,
+  "loc": [
+   "Town River",
+   "Forest River"
+  ],
+  "note": "",
+  "groups": [
+   "River"
+  ],
+  "time": [
+   [
+    9,
+    26
+   ]
+  ],
+  "timeRaw": "9am – 2am",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall"
+  ],
+  "seasonNote": "Spring Summer Fall",
+  "weather": "rain",
+  "size": "20–49",
+  "diff": 45,
+  "behavior": "smooth",
+  "xp": 18,
+  "used": {
+   "bundles": [
+    "River Fish",
+    "Quality Fish"
+   ],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Lingcod",
+  "kind": "pole",
+  "price": 120,
+  "loc": [
+   "Town River",
+   "Forest River",
+   "Mountain Lake"
+  ],
+  "note": "",
+  "groups": [
+   "River",
+   "Mountain Lake"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any time",
+  "seasons": [
+   "Winter"
+  ],
+  "seasonNote": "Winter",
+  "weather": "any",
+  "size": "30–51",
+  "diff": 85,
+  "behavior": "mixed",
+  "xp": 31,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Halibut",
+  "kind": "pole",
+  "price": 80,
+  "loc": [
+   "Ocean"
+  ],
+  "note": "",
+  "groups": [
+   "Ocean"
+  ],
+  "time": [
+   [
+    6,
+    11
+   ],
+   [
+    19,
+    26
+   ]
+  ],
+  "timeRaw": "6am – 11am 7pm – 2am",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Winter"
+  ],
+  "seasonNote": "Spring Summer Winter",
+  "weather": "any",
+  "size": "10–34",
+  "diff": 50,
+  "behavior": "sinker",
+  "xp": 19,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Woodskip",
+  "kind": "pole",
+  "price": 75,
+  "loc": [
+   "Secret Woods",
+   "Forest Farm"
+  ],
+  "note": "",
+  "groups": [
+   "Secret Woods",
+   "Farm"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Anytime",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "11–31",
+  "diff": 50,
+  "behavior": "mixed",
+  "xp": 19,
+  "used": {
+   "bundles": [
+    "Specialty Fish"
+   ],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Void Salmon",
+  "kind": "pole",
+  "price": 150,
+  "loc": [
+   "Witch's Swamp"
+  ],
+  "note": "",
+  "groups": [
+   "Witch's Swamp"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Anytime",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "24–66",
+  "diff": 80,
+  "behavior": "mixed",
+  "xp": 29,
+  "used": {
+   "bundles": [
+    "Missing"
+   ],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Slimejack",
+  "kind": "pole",
+  "price": 100,
+  "loc": [
+   "Mutant Bug Lair"
+  ],
+  "note": "",
+  "groups": [
+   "Bug Lair"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Anytime",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "8–26",
+  "diff": 55,
+  "behavior": "dart",
+  "xp": 21,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Stingray",
+  "kind": "pole",
+  "price": 180,
+  "loc": [
+   "Pirate Cove (Ginger Island)"
+  ],
+  "note": "",
+  "groups": [
+   "Ginger Island"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Anytime",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "18–61",
+  "diff": 80,
+  "behavior": "sinker",
+  "xp": 29,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Lionfish",
+  "kind": "pole",
+  "price": 100,
+  "loc": [
+   "Ginger Island Oceans"
+  ],
+  "note": "",
+  "groups": [
+   "Ginger Island"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Anytime",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "3–13",
+  "diff": 50,
+  "behavior": "smooth",
+  "xp": 19,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Blue Discus",
+  "kind": "pole",
+  "price": 120,
+  "loc": [
+   "Ginger Island Rivers"
+  ],
+  "note": "",
+  "groups": [
+   "Ginger Island"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Anytime",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "2–10",
+  "diff": 60,
+  "behavior": "dart",
+  "xp": 23,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Goby",
+  "kind": "pole",
+  "price": 150,
+  "loc": [
+   "Forest Waterfalls"
+  ],
+  "note": "",
+  "groups": [
+   "Forest Pond"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Anytime",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "3–13",
+  "diff": 55,
+  "behavior": "dart",
+  "xp": 21,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Midnight Squid",
+  "kind": "night",
+  "price": 100,
+  "loc": [
+   "Night Market submarine"
+  ],
+  "note": "Winter 15–17, 5pm–2am",
+  "groups": [
+   "Night Market"
+  ],
+  "time": [
+   [
+    17,
+    26
+   ]
+  ],
+  "timeRaw": "5pm – 2am",
+  "seasons": [
+   "Winter"
+  ],
+  "seasonNote": "Winter 15–17",
+  "weather": "any",
+  "size": "8–26",
+  "diff": 55,
+  "behavior": "sinker",
+  "xp": 21,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Spook Fish",
+  "kind": "night",
+  "price": 220,
+  "loc": [
+   "Night Market submarine"
+  ],
+  "note": "Winter 15–17, 5pm–2am",
+  "groups": [
+   "Night Market"
+  ],
+  "time": [
+   [
+    17,
+    26
+   ]
+  ],
+  "timeRaw": "5pm – 2am",
+  "seasons": [
+   "Winter"
+  ],
+  "seasonNote": "Winter 15–17",
+  "weather": "any",
+  "size": "8–26",
+  "diff": 60,
+  "behavior": "dart",
+  "xp": 23,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Blobfish",
+  "kind": "night",
+  "price": 500,
+  "loc": [
+   "Night Market submarine"
+  ],
+  "note": "Winter 15–17, 5pm–2am",
+  "groups": [
+   "Night Market"
+  ],
+  "time": [
+   [
+    17,
+    26
+   ]
+  ],
+  "timeRaw": "5pm – 2am",
+  "seasons": [
+   "Winter"
+  ],
+  "seasonNote": "Winter 15–17",
+  "weather": "any",
+  "size": "8–26",
+  "diff": 75,
+  "behavior": "floater",
+  "xp": 28,
+  "used": {
+   "bundles": [
+    "Master Fishers"
+   ],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Crimsonfish",
+  "kind": "legendary",
+  "price": 1500,
+  "loc": [
+   "East Pier on The Beach"
+  ],
+  "note": "Requires level 5 fishing.",
+  "groups": [
+   "Ocean"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Summer"
+  ],
+  "seasonNote": "Summer",
+  "weather": "any",
+  "size": "19–21",
+  "diff": 95,
+  "behavior": "mixed",
+  "xp": 170,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Angler",
+  "kind": "legendary",
+  "price": 900,
+  "loc": [
+   "Near the waterfall north of JojaMart"
+  ],
+  "note": "Requires level 3 fishing.",
+  "groups": [
+   "River"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Fall"
+  ],
+  "seasonNote": "Fall",
+  "weather": "any",
+  "size": "17–19",
+  "diff": 85,
+  "behavior": "smooth",
+  "xp": 155,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Legend",
+  "kind": "legendary",
+  "price": 5000,
+  "loc": [
+   "The Mountain Lake near the log"
+  ],
+  "note": "Requires level 10 fishing.",
+  "groups": [
+   "Mountain Lake"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring"
+  ],
+  "seasonNote": "Spring",
+  "weather": "rain",
+  "size": "49–51",
+  "diff": 110,
+  "behavior": "mixed",
+  "xp": 195,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Glacierfish",
+  "kind": "legendary",
+  "price": 1000,
+  "loc": [
+   "South end of Arrowhead Island in Cindersap Forest"
+  ],
+  "note": "Requires level 6 fishing.",
+  "groups": [
+   "Forest Pond"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Winter"
+  ],
+  "seasonNote": "Winter",
+  "weather": "any",
+  "size": "26–28",
+  "diff": 100,
+  "behavior": "mixed",
+  "xp": 180,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Mutant Carp",
+  "kind": "legendary",
+  "price": 1000,
+  "loc": [
+   "The Sewers"
+  ],
+  "note": "",
+  "groups": [
+   "Sewers"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "35–37",
+  "diff": 80,
+  "behavior": "dart",
+  "xp": 145,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Son of Crimsonfish",
+  "kind": "legendary2",
+  "price": 1500,
+  "loc": [
+   "East Pier on The Beach"
+  ],
+  "note": "Requires level 5 fishing.",
+  "groups": [
+   "Ocean"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "19–21",
+  "diff": 95,
+  "behavior": "mixed",
+  "xp": 34,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Ms. Angler",
+  "kind": "legendary2",
+  "price": 900,
+  "loc": [
+   "Near the waterfall north of JojaMart"
+  ],
+  "note": "Requires level 3 fishing.",
+  "groups": [
+   "River"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "|All Seasons",
+  "weather": "any",
+  "size": "17–19",
+  "diff": 85,
+  "behavior": "smooth",
+  "xp": 31,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Legend II",
+  "kind": "legendary2",
+  "price": 5000,
+  "loc": [
+   "The Mountain Lake near the log"
+  ],
+  "note": "Requires level 10 fishing.",
+  "groups": [
+   "Mountain Lake"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "49–51",
+  "diff": 110,
+  "behavior": "mixed",
+  "xp": 39,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Glacierfish Jr.",
+  "kind": "legendary2",
+  "price": 1000,
+  "loc": [
+   "South end of Arrowhead Island in Cindersap Forest"
+  ],
+  "note": "Requires level 6 fishing.",
+  "groups": [
+   "Forest Pond"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "26–28",
+  "diff": 100,
+  "behavior": "mixed",
+  "xp": 36,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Radioactive Carp",
+  "kind": "legendary2",
+  "price": 1000,
+  "loc": [
+   "The Sewers"
+  ],
+  "note": "",
+  "groups": [
+   "Sewers"
+  ],
+  "time": [
+   [
+    6,
+    26
+   ]
+  ],
+  "timeRaw": "Any",
+  "seasons": [
+   "Spring",
+   "Summer",
+   "Fall",
+   "Winter"
+  ],
+  "seasonNote": "All Seasons",
+  "weather": "any",
+  "size": "35–37",
+  "diff": 80,
+  "behavior": "dart",
+  "xp": 29,
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Clam",
+  "kind": "crab",
+  "price": 50,
+  "loc": [
+   "Ocean"
+  ],
+  "groups": [
+   "Ocean"
+  ],
+  "trap": "9%",
+  "size": "1–5",
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Chowder"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Lobster",
+  "kind": "crab",
+  "price": 120,
+  "loc": [
+   "Ocean"
+  ],
+  "groups": [
+   "Ocean"
+  ],
+  "trap": "4%",
+  "size": "2–20",
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Lobster Bisque"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Crayfish",
+  "kind": "crab",
+  "price": 75,
+  "loc": [
+   "Freshwater"
+  ],
+  "groups": [
+   "River",
+   "Mountain Lake",
+   "Forest Pond"
+  ],
+  "trap": "21%",
+  "size": "1–8",
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Fish Stew"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Crab",
+  "kind": "crab",
+  "price": 100,
+  "loc": [
+   "Ocean"
+  ],
+  "groups": [
+   "Ocean"
+  ],
+  "trap": "8%",
+  "size": "1–20",
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Crab Cakes"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Cockle",
+  "kind": "crab",
+  "price": 50,
+  "loc": [
+   "Ocean"
+  ],
+  "groups": [
+   "Ocean"
+  ],
+  "trap": "12%",
+  "size": "1–5",
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Mussel",
+  "kind": "crab",
+  "price": 30,
+  "loc": [
+   "Ocean"
+  ],
+  "groups": [
+   "Ocean"
+  ],
+  "trap": "10%",
+  "size": "1–5",
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Fish Stew"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Shrimp",
+  "kind": "crab",
+  "price": 60,
+  "loc": [
+   "Ocean"
+  ],
+  "groups": [
+   "Ocean"
+  ],
+  "trap": "10%",
+  "size": "1–3",
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Tom Kha Soup",
+    "Shrimp Cocktail"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Snail",
+  "kind": "crab",
+  "price": 65,
+  "loc": [
+   "Freshwater"
+  ],
+  "groups": [
+   "River",
+   "Mountain Lake",
+   "Forest Pond"
+  ],
+  "trap": "20%",
+  "size": "1–5",
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Escargot"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Periwinkle",
+  "kind": "crab",
+  "price": 20,
+  "loc": [
+   "Freshwater"
+  ],
+  "groups": [
+   "River",
+   "Mountain Lake",
+   "Forest Pond"
+  ],
+  "trap": "21%",
+  "size": "1–3",
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Strange Bun",
+    "Fish Stew"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Oyster",
+  "kind": "crab",
+  "price": 40,
+  "loc": [
+   "Ocean"
+  ],
+  "groups": [
+   "Ocean"
+  ],
+  "trap": "10%",
+  "size": "1–5",
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [],
+   "pond": false
+  }
+ },
+ {
+  "name": "Seaweed",
+  "kind": "other",
+  "price": 20,
+  "loc": [
+   "Ocean via Fishing",
+   "Beach via Foraging"
+  ],
+  "groups": [
+   "Ocean"
+  ],
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Maki Roll",
+    "Fish Pond"
+   ],
+   "pond": true
+  }
+ },
+ {
+  "name": "Green Algae",
+  "kind": "other",
+  "price": null,
+  "loc": [
+   "Everywhere but the Farm Pond of the Standard Farm and the Ocean"
+  ],
+  "groups": [
+   "River",
+   "Mountain Lake",
+   "Forest Pond"
+  ],
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Algae Soup",
+    "Trout Soup",
+    "Fish Pond"
+   ],
+   "pond": true
+  }
+ },
+ {
+  "name": "White Algae",
+  "kind": "other",
+  "price": null,
+  "loc": [
+   "Mines • Sewers • Mutant Bug Lair • Witch's Swamp"
+  ],
+  "groups": [
+   "Sewers",
+   "Mines",
+   "Witch's Swamp",
+   "Bug Lair"
+  ],
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Pale Broth"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Sea Jelly",
+  "kind": "other",
+  "price": null,
+  "loc": [
+   "Saltwater locations"
+  ],
+  "groups": [
+   "Ocean"
+  ],
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Fish Smoker"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "River Jelly",
+  "kind": "other",
+  "price": null,
+  "loc": [
+   "Freshwater locations"
+  ],
+  "groups": [
+   "River",
+   "Mountain Lake",
+   "Forest Pond"
+  ],
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Fish Smoker"
+   ],
+   "pond": false
+  }
+ },
+ {
+  "name": "Cave Jelly",
+  "kind": "other",
+  "price": null,
+  "loc": [
+   "Levels 20, 60, and 100 of the Mines"
+  ],
+  "groups": [
+   "Mines"
+  ],
+  "used": {
+   "bundles": [],
+   "loved": [],
+   "recipes": [
+    "Fish Smoker"
+   ],
+   "pond": false
+  }
+ }
+]

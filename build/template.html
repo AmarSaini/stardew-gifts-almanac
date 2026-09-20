@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#150f4a">
-<title>Loved Gifts Almanac</title>
-<meta name="description" content="Every Stardew Valley villager's loved gifts, including Stardew Valley Expanded.">
+<title>Stardew Almanac</title>
+<meta name="description" content="A pocket guide to Stardew Valley: every villager's loved gifts and a fishing guide, including Stardew Valley Expanded.">
 <link rel="preload" href="assets/fonts/pixelify-sans.woff2" as="font" type="font/woff2" crossorigin>
 <style>
   @font-face{font-family:"Pixelify Sans";src:url("assets/fonts/pixelify-sans.woff2") format("woff2");font-weight:400 700;font-display:swap;}
@@ -83,11 +83,7 @@
       drop-shadow(0 8px 6px rgba(0,0,0,.35));
     text-wrap:balance;
   }
-  .logo small{
-    display:block;margin-top:.5em;
-    font-size:.36em;letter-spacing:.14em;
-    background:none;-webkit-text-fill-color:#fff;color:#fff;
-  }
+  .logo small{display:block;margin-top:.3em;font-size:.6em;letter-spacing:.26em;}
   .tagline{
     display:inline-block;margin:clamp(14px,3vw,22px) 0 0;
     padding:6px 14px;
@@ -234,6 +230,99 @@
   .gift.any{border-style:dashed;}
   .empty{display:none;text-align:center;color:#fff;text-shadow:1px 1px 0 #000;padding:30px 0;font-size:1.05rem;}
 
+
+  /* ---------- Tabs (in-game menu bar) ---------- */
+  .tabbar{
+    position:sticky;top:0;z-index:20;
+    background:var(--wood-deep);
+    border-bottom:4px solid #2c1406;
+    box-shadow:0 6px 0 rgba(0,0,0,.28);
+    padding:8px 12px 0;
+  }
+  .tabs{display:flex;justify-content:center;gap:6px;max-width:1160px;margin:0 auto;}
+  .tab{
+    cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    min-height:48px;padding:6px 18px 8px;flex:0 1 200px;
+    font-family:"Press Start 2P",monospace;font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;
+    background:var(--wood);color:#f0d6ad;
+    border:4px solid #2c1406;border-bottom:0;
+  }
+  .tab .ic{width:28px;height:28px;}
+  .tab:hover{background:#8d4a1c;}
+  .tab[aria-selected="true"]{background:var(--parch);color:var(--ink);box-shadow:inset 0 5px 0 var(--gold);padding-top:9px;}
+  .panel[hidden]{display:none;}
+  .panel{padding-top:clamp(16px,3vw,26px);}
+
+  /* ---------- Fishing ---------- */
+  .fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:var(--gap);}
+  .fish .in{padding:0;gap:0;border-top:0;}
+  .sstripe{display:grid;grid-template-columns:repeat(4,1fr);height:10px;}
+  .sstripe i{display:block;background:#cdb98c;}
+  .sstripe i.on.Spring{background:#7fcf4c;} .sstripe i.on.Summer{background:#ffd23a;}
+  .sstripe i.on.Fall{background:#e8862f;} .sstripe i.on.Winter{background:#8fc9f5;}
+  .fbody2{padding:12px 14px 14px;display:flex;flex-direction:column;gap:10px;}
+  .fish .head{align-items:center;flex-wrap:nowrap;}
+  .fish .portrait{width:54px;height:54px;}
+  .fish .portrait img{width:48px;height:48px;object-fit:contain;}
+  .fish .who{gap:5px;min-width:0;}
+  .fish .name{overflow-wrap:anywhere;}
+  .price{
+    display:inline-flex;align-items:center;gap:5px;justify-self:start;
+    font-weight:700;font-size:.95rem;color:var(--ink);
+  }
+  .price svg{width:14px;height:14px;}
+  .ribbon{
+    flex:none;align-self:flex-start;margin-left:auto;
+    font-family:"Press Start 2P",monospace;font-size:.5rem;line-height:1.5;text-transform:uppercase;
+    color:var(--ink);background:linear-gradient(180deg,var(--gold-hi),var(--gold));
+    border:3px solid var(--wood);padding:3px 6px;text-align:center;
+  }
+  .when{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;}
+  .pips{display:inline-flex;gap:3px;}
+  .pips svg{width:16px;height:16px;display:block;opacity:.22;filter:grayscale(1);}
+  .pips svg.on{opacity:1;filter:none;}
+  .chip{
+    display:inline-flex;align-items:center;gap:5px;
+    padding:1px 8px 1px 5px;font-size:.86rem;font-weight:600;
+    background:#fff6dc;border:3px solid var(--wood);color:var(--ink);
+  }
+  .chip svg{width:14px;height:14px;display:block;}
+  .chip.sun{background:#ffe27a;} .chip.rain{background:#bfe3ff;}
+  .where{display:flex;flex-wrap:wrap;gap:5px;}
+  .where .chip{background:transparent;border-width:2px;font-weight:500;font-size:.82rem;padding:0 7px;}
+  .note{margin:0;font-size:.86rem;color:var(--ink-soft);}
+  .stats{display:grid;grid-template-columns:1fr auto auto;gap:6px 14px;align-items:center;font-size:.86rem;}
+  .stats .lab{color:var(--ink-soft);font-weight:600;}
+  .meter{display:grid;gap:3px;}
+  .meter .bar{height:10px;background:#cdb98c;border:2px solid var(--wood);}
+  .meter .bar b{display:block;height:100%;background:linear-gradient(90deg,#7fcf4c,#ffd23a 55%,#e8402f);}
+  .stat{display:grid;text-align:center;}
+  .stat b{font-size:.95rem;}
+  .used{display:flex;flex-wrap:wrap;gap:5px;align-items:center;border-top:2px dashed #cdb98c;padding-top:9px;}
+  .used .lbl{font-size:.78rem;font-weight:600;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.06em;}
+  .used .chip .ic{width:22px;height:22px;}
+  .lovers{display:inline-flex;gap:3px;}
+  .lover{
+    cursor:pointer;padding:0;width:32px;height:32px;background:var(--parch-2);border:3px solid var(--wood);overflow:hidden;
+  }
+  .lover img{width:100%;height:100%;object-fit:cover;display:block;}
+  .lover:hover{border-color:var(--gold-lo);}
+  .slider{display:grid;gap:4px;justify-items:center;padding:6px 14px 4px;background:var(--parch);border:4px solid var(--wood-deep);box-shadow:0 4px 0 rgba(0,0,0,.35);min-width:min(100%,320px);}
+  .slider label{font-weight:700;font-size:.95rem;}
+  .slider input{width:100%;accent-color:var(--leaf);}
+
+  .fpanel{width:100%;max-width:940px;}
+  .fpanel .in{display:grid;gap:12px;padding:16px;}
+  .frow{display:grid;grid-template-columns:84px 1fr;gap:10px;align-items:center;}
+  .flab{font-family:"Press Start 2P",monospace;font-size:.55rem;line-height:1.5;text-transform:uppercase;color:var(--ink-soft);}
+  .fpanel .pills{justify-content:flex-start;gap:6px;}
+  .fpanel .pill{min-height:38px;padding:5px 11px;border-width:3px;font-size:.9rem;background:#fff6dc;box-shadow:0 3px 0 rgba(0,0,0,.28);}
+  .fpanel .pill[aria-pressed="true"]{background:var(--leaf);}
+  .ftime{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;}
+  .fpanel .slider{flex:1 1 220px;min-width:0;background:none;border:0;box-shadow:none;padding:0;justify-items:start;}
+  .fpanel .slider label{font-size:.88rem;}
+  .fsec-note{margin:-6px 0 14px;text-align:center;color:#e8f7ff;text-shadow:1px 1px 0 rgba(0,0,0,.7);font-size:.92rem;}
+
   footer{margin-top:44px;text-align:center;color:#e8f7ff;text-shadow:1px 1px 0 rgba(0,0,0,.7);font-size:.88rem;}
   footer a{color:var(--gold-hi);}
 
@@ -248,6 +337,11 @@
     .portrait{width:56px;height:56px;}
     .name{font-size:.72rem;}
     .everyone h2{flex-basis:100%;}
+    .tab{padding:6px 8px 8px;font-size:.6rem;gap:6px;flex:1 1 0;}
+    .tab .ic{width:24px;height:24px;}
+    .fgrid{grid-template-columns:1fr;}
+    .frow{grid-template-columns:1fr;gap:6px;}
+    .fpanel .in{padding:12px;}
   }
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}}
 </style>
@@ -260,14 +354,24 @@
   <symbol id="g-Summer" viewBox="0 0 7 7" shape-rendering="crispEdges"><path fill="#b8620c" d="M3 0h1v1H3zM3 6h1v1H3zM0 3h1v1H0zM6 3h1v1H6zM1 1h1v1H1zM5 1h1v1H5zM1 5h1v1H1zM5 5h1v1H5z"/><path fill="#f5a916" d="M2 2h3v3H2z"/><path fill="#ffe066" d="M3 3h1v1H3z"/></symbol>
   <symbol id="g-Fall" viewBox="0 0 7 7" shape-rendering="crispEdges"><path fill="#7a3f17" d="M3 0h1v1H3zM2 1h3v1H2zM1 2h5v2H1zM2 4h3v1H2zM3 5h1v2H3z"/><path fill="#d2691e" d="M3 1h1v1H3zM2 2h3v2H2zM3 4h1v1H3z"/></symbol>
   <symbol id="g-Winter" viewBox="0 0 7 7" shape-rendering="crispEdges"><path fill="#2b6fb8" d="M3 0h1v7H3zM0 3h7v1H0zM1 1h1v1H1zM5 1h1v1H5zM1 5h1v1H1zM5 5h1v1H5z"/></symbol>
+  <symbol id="g-coin" viewBox="0 0 7 7" shape-rendering="crispEdges"><path fill="#7a3f17" d="M2 0h3v1h1v1h1v3H6v1H5v1H2V6H1V5H0V2h1V1h1z"/><path fill="#f5a916" d="M2 1h3v1h1v3H5v1H2V5H1V2h1z"/><path fill="#ffe066" d="M2 2h1v2H2z"/></symbol>
+  <symbol id="g-rain" viewBox="0 0 7 7" shape-rendering="crispEdges"><path fill="#4a6fa5" d="M2 0h3v1h1v1h1v2H0V2h1V1h1z"/><path fill="#8fb4e6" d="M2 1h3v1H2z"/><path fill="#2b6fb8" d="M1 5h1v2H1zM3 5h1v2H3zM5 5h1v2H5z"/></symbol>
 </svg>
 
-<main class="wrap">
-  <header class="hero">
-    <h1 class="logo">Loved Gifts<small>Almanac</small></h1>
-    <p class="tagline">Every villager's favorite present &middot; Vanilla + Stardew Valley Expanded</p>
+<header class="hero">
+    <h1 class="logo">Stardew<small>Almanac</small></h1>
+    <p class="tagline">Gifts, fishing &amp; more &middot; Vanilla + Stardew Valley Expanded</p>
   </header>
 
+<nav class="tabbar" aria-label="Almanac sections">
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" id="tab-gifts" aria-controls="panel-gifts" aria-selected="true" data-tab="gifts"><img class="ic" src="assets/items/pink-cake.png" alt="" width="28" height="28">Gifts</button>
+    <button class="tab" role="tab" id="tab-fishing" aria-controls="panel-fishing" aria-selected="false" data-tab="fishing"><img class="ic" src="assets/items/sturgeon.png" alt="" width="28" height="28">Fishing</button>
+  </div>
+</nav>
+
+<main class="wrap">
+<div class="panel" id="panel-gifts" role="tabpanel" aria-labelledby="tab-gifts">
   <section class="controls" aria-label="Search and filters">
     <label class="search">
       <svg viewBox="0 0 10 10" shape-rendering="crispEdges" aria-hidden="true"><path fill="#7a3f17" d="M2 0h4v1h1v1h1v4H7v1H6v1H2V7H1V6H0V2h1V1h1z"/><path fill="#fbe3ae" d="M2 1h4v1h1v4H6v1H2V6H1V2h1z"/><path fill="#7a3f17" d="M6 6h1v1h1v1h1v1H8V8H7V7H6z"/></svg>
@@ -319,9 +423,47 @@
   </section>
 
   <p class="empty" id="empty">Nobody in the valley loves that. Try another search.</p>
+</div>
 
-  <footer>Sprites &amp; data from the <a href="https://stardewvalleywiki.com" target="_blank" rel="noopener">Stardew Valley Wiki</a> and the <a href="https://stardewvalleyexpanded.wiki.gg" target="_blank" rel="noopener">SVE Wiki</a>. Fan-made, not affiliated with ConcernedApe.</footer>
+<div class="panel" id="panel-fishing" role="tabpanel" aria-labelledby="tab-fishing" hidden>
+  <section class="controls" aria-label="Fishing search and filters">
+    <label class="search">
+      <svg viewBox="0 0 10 10" shape-rendering="crispEdges" aria-hidden="true"><path fill="#7a3f17" d="M2 0h4v1h1v1h1v4H7v1H6v1H2V7H1V6H0V2h1V1h1z"/><path fill="#fbe3ae" d="M2 1h4v1h1v4H6v1H2V6H1V2h1z"/><path fill="#7a3f17" d="M6 6h1v1h1v1h1v1H8V8H7V7H6z"/></svg>
+      <input id="fq" type="search" placeholder="Find a fish or a place" autocomplete="off" enterkeyhint="search" aria-label="Search fish or locations">
+    </label>
+    <details class="filters" id="ffilters" open>
+      <summary class="pill">What&rsquo;s biting?</summary>
+      <div class="fbody">
+        <div class="fpanel box"><div class="in">
+          <div class="frow"><span class="flab">Season</span><div class="pills" id="fSeason" role="group" aria-label="Season">
+            <button class="pill" data-v="all" aria-pressed="true">Any</button>
+            <button class="pill" data-v="Spring" aria-pressed="false">Spring</button>
+            <button class="pill" data-v="Summer" aria-pressed="false">Summer</button>
+            <button class="pill" data-v="Fall" aria-pressed="false">Fall</button>
+            <button class="pill" data-v="Winter" aria-pressed="false">Winter</button></div></div>
+          <div class="frow"><span class="flab">Weather</span><div class="pills" id="fWeather" role="group" aria-label="Weather">
+            <button class="pill" data-v="any" aria-pressed="true">Any</button>
+            <button class="pill" data-v="sun" aria-pressed="false">Sunny</button>
+            <button class="pill" data-v="rain" aria-pressed="false">Rainy</button></div></div>
+          <div class="frow"><span class="flab">Time</span><div class="ftime"><div class="pills" id="fTime" role="group" aria-label="Time of day"><button class="pill" data-v="any" aria-pressed="true">Any</button></div>
+            <div class="slider"><label for="fHour" id="fHourLab">Drag to pick a time</label><input id="fHour" type="range" min="6" max="25" step="1" value="12"></div></div></div>
+          <div class="frow"><span class="flab">Where</span><div class="pills" id="fLoc" role="group" aria-label="Location"></div></div>
+          <div class="frow"><span class="flab">Sort</span><div class="pills" id="fSort" role="group" aria-label="Sort order">
+            <button class="pill" data-v="az" aria-pressed="true">A&ndash;Z</button>
+            <button class="pill" data-v="price" aria-pressed="false">Highest price</button>
+            <button class="pill" data-v="diff" aria-pressed="false">Hardest</button>
+            <button class="pill" data-v="xp" aria-pressed="false">Most XP</button></div></div>
+        </div></div>
+      </div>
+    </details>
+  </section>
+  <p class="count" id="fCount" role="status"></p>
+  <div id="fSections"></div>
+  <p class="empty" id="fEmpty">Nothing is biting with those settings. Loosen a filter.</p>
+</div>
+
 </main>
+<footer class="wrap">Sprites &amp; data from the <a href="https://stardewvalleywiki.com" target="_blank" rel="noopener">Stardew Valley Wiki</a> and the <a href="https://stardewvalleyexpanded.wiki.gg" target="_blank" rel="noopener">SVE Wiki</a>. Fan-made, not affiliated with ConcernedApe.</footer>
 
 <script>
 const ASSETS = /*ASSETS*/;
@@ -415,6 +557,122 @@ for (const [id,key] of [["roleFilter","role"],["srcFilter","src"],["seasonFilter
 }
 if (matchMedia('(max-width:520px)').matches) document.getElementById('filters').open = false;
 apply();
+
+/* =====================  FISHING  ===================== */
+const FISH = /*FISH*/;
+const LOC_ORDER = ["Ocean","River","Mountain Lake","Forest Pond","Secret Woods","Sewers","Mines","Desert","Witch's Swamp","Bug Lair","Ginger Island","Night Market"];
+const FSECTIONS = [
+  ["pole","Fishing rod",""],
+  ["legendary","Legendary fish","Catch the original legend first; its offspring unlock later."],
+  ["night","Night Market","Winter 15–17 only, from the submarine."],
+  ["crab","Crab pots","No rod needed – drop a pot in the water."],
+  ["other","Other catches","Jellies, algae and seaweed."]
+];
+const kindOf = f => f.kind === "legendary2" ? "legendary" : f.kind;
+const fmtH = h => { const m = Math.round((h % 1) * 60); h = Math.floor(h) % 24; return ((h % 12) || 12) + (m ? ":" + String(m).padStart(2,"0") : "") + (h >= 12 ? "pm" : "am"); };
+const fmtWin = t => (t.length === 1 && t[0][0] <= 6 && t[0][1] >= 26) ? "Anytime" : t.map(([a,b]) => fmtH(a) + "–" + fmtH(b)).join(", ");
+const loversOf = name => DATA.filter(d => d[3].includes(name) && ASSETS.characters[d[0]]).map(d => d[0]);
+const sesGlyph = (s, on) => `<svg class="${on ? "on" : ""}" aria-hidden="true"><use href="#g-${s}"/></svg>`;
+
+function fishCard(f){
+  const k = kindOf(f), legend = f.kind.startsWith("legendary");
+  const stripe = f.seasons ? `<div class="sstripe" title="${esc(f.seasonNote || "")}">${SEASONS.map(x => `<i class="${x}${f.seasons.includes(x) ? " on" : ""}"></i>`).join("")}</div>` : `<div class="sstripe"><i class="on Winter" style="background:#9bb0c4"></i><i class="on Winter" style="background:#9bb0c4"></i><i class="on Winter" style="background:#9bb0c4"></i><i class="on Winter" style="background:#9bb0c4"></i></div>`;
+  const price = f.price ? `<span class="price"><svg aria-hidden="true"><use href="#g-coin"/></svg>${f.price}g</span>` : "";
+  const src = ASSETS.items[f.name];
+  const ic = src ? `<img src="${src}" alt="" width="48" height="48" loading="lazy" decoding="async">` : `<b>${esc(f.name[0])}</b>`;
+  const url = wikiUrl(f.name, false);
+  let when = "";
+  if (f.time){
+    const wx = f.weather === "sun" ? `<span class="chip sun"><svg aria-hidden="true"><use href="#g-Summer"/></svg>Sunny only</span>` : f.weather === "rain" ? `<span class="chip rain"><svg aria-hidden="true"><use href="#g-rain"/></svg>Rain only</span>` : "";
+    when = `<div class="when"><span class="pips" role="img" aria-label="${esc(f.seasonNote)}">${SEASONS.map(x => sesGlyph(x, f.seasons.includes(x))).join("")}</span><span class="chip">${fmtWin(f.time)}</span>${wx}</div>`;
+  }
+  const where = `<div class="where">${f.loc.map(l => `<span class="chip">${esc(l)}</span>`).join("")}</div>`;
+  const note = f.note ? `<p class="note">${esc(f.note)}</p>` : (f.trap ? `<p class="note">Trap chance ${esc(f.trap)}</p>` : "");
+  const stats = f.diff ? `<div class="stats"><div class="meter"><span class="lab">Difficulty ${f.diff}${f.behavior ? " · " + esc(f.behavior) : ""}</span><div class="bar"><b style="width:${Math.min(100, f.diff / 110 * 100)}%"></b></div></div><div class="stat"><span class="lab">Size</span><b>${esc(f.size)}"</b></div><div class="stat"><span class="lab">XP</span><b>${f.xp}</b></div></div>` : "";
+  const lovers = loversOf(f.name);
+  const u = f.used || {};
+  const bundles = (u.bundles || []).map(b => `<span class="chip" title="Community Center bundle">${esc(b)} bundle</span>`).join("");
+  const recipes = (u.recipes || []).filter(r => ASSETS.items[r]).map(r => `<span class="chip" title="Used in ${esc(r)}">${icon(r)}${esc(r)}</span>`).join("");
+  const loved = lovers.length ? `<span class="lbl">Loved by</span><span class="lovers">${lovers.map(n => `<button class="lover" data-goto="${esc(n)}" title="${esc(n)} loves this – open in Gifts"><img src="${ASSETS.characters[n]}" alt="${esc(n)}" width="32" height="32"></button>`).join("")}</span>` : "";
+  const usedRow = (bundles || recipes || loved) ? `<div class="used">${bundles}${recipes}${loved}</div>` : "";
+  return `<article class="card box fish" data-k="${k}" data-name="${esc(f.name.toLowerCase())}" data-search="${esc((f.name + " " + f.loc.join(" ")).toLowerCase())}" data-price="${f.price || 0}" data-diff="${f.diff || 0}" data-xp="${f.xp || 0}">
+    <div class="in">${stripe}<div class="fbody2">
+      <div class="head"><a class="portrait" href="${url}" target="_blank" rel="noopener" title="Open ${esc(f.name)} on the wiki">${ic}</a>
+        <div class="who"><a class="name" href="${url}" target="_blank" rel="noopener">${esc(f.name)}</a>${price}</div>
+        ${legend ? `<span class="ribbon">${f.kind === "legendary2" ? "Legendary<br>II" : "Legendary"}</span>` : ""}</div>
+      ${when}${where}${note}${stats}${usedRow}
+    </div></div></article>`;
+}
+
+document.getElementById("fSections").innerHTML = FSECTIONS.map(([k, title, blurb]) => {
+  const list = FISH.filter(f => kindOf(f) === k);
+  return `<section class="section" data-sec="${k}"><div class="banner"><span class="rule"></span><h2>${title}</h2><span class="rule"></span>${blurb ? `<p>${blurb}</p>` : ""}</div><div class="fgrid">${list.map(fishCard).join("")}</div></section>`;
+}).join("");
+document.getElementById("fLoc").innerHTML = `<button class="pill" data-v="all" aria-pressed="true">Anywhere</button>` + LOC_ORDER.map(l => `<button class="pill" data-v="${esc(l)}" aria-pressed="false">${esc(l)}</button>`).join("");
+
+const fst = {q:"", season:"all", weather:"any", hour:null, loc:"all", sort:"az"};
+const fcards = [...document.querySelectorAll(".fish")];
+const fdata = new Map(FISH.map(f => [f.name.toLowerCase(), f]));
+const fsecs = [...document.querySelectorAll("#fSections .section")];
+const fEmpty = document.getElementById("fEmpty"), fCount = document.getElementById("fCount");
+const hourLab = document.getElementById("fHourLab"), hourIn = document.getElementById("fHour");
+
+function fApply(){
+  let shown = 0;
+  fcards.forEach((c, idx) => {
+    const f = fdata.get(c.dataset.name);
+    const ok = (fst.season === "all" || !f.seasons || f.seasons.includes(fst.season))
+      && (fst.weather === "any" || !f.weather || f.weather === "any" || f.weather === fst.weather)
+      && (fst.hour === null || !f.time || f.time.some(([a, b]) => fst.hour >= a && fst.hour < b))
+      && (fst.loc === "all" || f.groups.includes(fst.loc))
+      && (!fst.q || c.dataset.search.includes(fst.q));
+    c.hidden = !ok; if (ok) shown++;
+  });
+  const key = { az:(a,b) => a.dataset.name.localeCompare(b.dataset.name), price:(a,b) => b.dataset.price - a.dataset.price || a.dataset.name.localeCompare(b.dataset.name),
+    diff:(a,b) => b.dataset.diff - a.dataset.diff || a.dataset.name.localeCompare(b.dataset.name), xp:(a,b) => b.dataset.xp - a.dataset.xp || a.dataset.name.localeCompare(b.dataset.name) }[fst.sort];
+  [...fcards].sort(key).forEach((c, i) => { c.style.order = i; });
+  fsecs.forEach(sec => { sec.hidden = ![...sec.querySelectorAll(".fish")].some(c => !c.hidden); });
+  fEmpty.style.display = shown ? "none" : "block";
+  fCount.textContent = shown === fcards.length ? `Showing all ${shown} catches` : `Showing ${shown} of ${fcards.length} catches`;
+}
+document.getElementById("fq").addEventListener("input", e => { fst.q = e.target.value.trim().toLowerCase(); fApply(); });
+for (const [id, key] of [["fSeason","season"],["fWeather","weather"],["fLoc","loc"],["fSort","sort"]]){
+  const g = document.getElementById(id);
+  g.addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    fst[key] = b.dataset.v;
+    g.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    fApply();
+  });
+}
+const anyTime = document.querySelector("#fTime button");
+hourIn.addEventListener("input", () => {
+  fst.hour = Number(hourIn.value); anyTime.setAttribute("aria-pressed", "false");
+  hourLab.textContent = "Time: " + fmtH(fst.hour); fApply();
+});
+anyTime.addEventListener("click", () => { fst.hour = null; anyTime.setAttribute("aria-pressed", "true"); hourLab.textContent = "Drag to pick a time"; fApply(); });
+if (matchMedia('(max-width:520px)').matches) document.getElementById('ffilters').open = false;
+fApply();
+
+/* =====================  TABS  ===================== */
+const TABS = ["gifts", "fishing"];
+function showTab(t, push){
+  if (!TABS.includes(t)) t = "gifts";
+  TABS.forEach(x => {
+    document.getElementById("panel-" + x).hidden = x !== t;
+    document.getElementById("tab-" + x).setAttribute("aria-selected", String(x === t));
+  });
+  if (push && location.hash !== "#/" + t) history.replaceState(null, "", "#/" + t);
+  document.title = (t === "fishing" ? "Fishing · " : "Gifts · ") + "Stardew Almanac";
+}
+document.querySelector(".tabs").addEventListener("click", e => { const b = e.target.closest(".tab"); if (b){ showTab(b.dataset.tab, true); window.scrollTo({top:0}); } });
+document.getElementById("fSections").addEventListener("click", e => {
+  const b = e.target.closest("[data-goto]"); if (!b) return;
+  const q = document.getElementById("q"); q.value = b.dataset.goto; st.q = b.dataset.goto.toLowerCase(); apply();
+  showTab("gifts", true); window.scrollTo({top:0});
+});
+window.addEventListener("hashchange", () => showTab(location.hash.replace("#/", ""), false));
+showTab(location.hash.replace("#/", ""), false);
 </script>
 </body>
 </html>
