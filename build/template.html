@@ -321,6 +321,35 @@
   .ftime{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;}
   .fpanel .slider{flex:1 1 220px;min-width:0;background:none;border:0;box-shadow:none;padding:0;justify-items:start;}
   .fpanel .slider label{font-size:.88rem;}
+
+  /* ---------- Collection board (in-game Collections look) ---------- */
+  .viewtoggle{display:flex;justify-content:center;margin-bottom:12px;}
+  .board{
+    --f:#a8511a;
+    background:#f0b57d;
+    border:6px solid var(--f);
+    box-shadow:inset 0 0 0 3px #d98a4a, inset 0 0 0 5px #8a3f10, 0 6px 0 rgba(0,0,0,.32);
+    padding:16px;
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(56px,1fr));gap:6px;justify-items:center;
+  }
+  .boardwrap{margin-bottom:clamp(18px,3vw,28px);}
+  .boardlabel{margin:0 0 8px;text-align:center;font-family:"Press Start 2P",monospace;font-weight:400;font-size:clamp(.66rem,2.6vw,.85rem);color:#fff;text-shadow:3px 3px 0 var(--wood-deep),-1px -1px 0 var(--wood-deep),1px -1px 0 var(--wood-deep),-1px 1px 0 var(--wood-deep);}
+  .cell{
+    cursor:pointer;padding:0;width:56px;height:56px;display:grid;place-items:center;
+    background:transparent;border:3px solid transparent;
+  }
+  .cell img{width:48px;height:48px;object-fit:contain;filter:drop-shadow(2px 2px 0 rgba(90,40,10,.35));transition:transform .08s;}
+  .cell:hover,.cell:focus-visible{border-color:var(--gold-hi);background:rgba(255,224,102,.35);outline:0;}
+  .cell:hover img{transform:translateY(-2px);}
+  .cell.dim{opacity:.26;filter:grayscale(1);}
+  .cell.dim:hover,.cell.dim:focus-visible{opacity:.7;}
+  .cellhint{margin:0 0 14px;text-align:center;color:#e8f7ff;text-shadow:1px 1px 0 rgba(0,0,0,.7);font-size:.92rem;}
+  dialog.fdlg{border:0;background:transparent;padding:6px;width:min(94vw,440px);max-height:94vh;overflow:auto;color:var(--ink);}
+  dialog.fdlg::backdrop{background:rgba(10,8,40,.74);}
+  .dlgbar{display:flex;gap:8px;justify-content:space-between;align-items:center;margin-bottom:10px;}
+  .dlgbar .pill{min-height:40px;padding:4px 12px;font-size:.92rem;}
+  .dlgbar .pill:disabled{opacity:.4;cursor:default;}
+  .dlgcount{color:#fff;text-shadow:1px 1px 0 #000;font-size:.9rem;font-weight:600;}
   .fsec-note{margin:-6px 0 14px;text-align:center;color:#e8f7ff;text-shadow:1px 1px 0 rgba(0,0,0,.7);font-size:.92rem;}
 
   footer{margin-top:44px;text-align:center;color:#e8f7ff;text-shadow:1px 1px 0 rgba(0,0,0,.7);font-size:.88rem;}
@@ -341,6 +370,7 @@
     .tab .ic{width:24px;height:24px;}
     .fgrid{grid-template-columns:1fr;}
     .banner .rule{display:none;}
+    .board{padding:10px;}
     .frow{grid-template-columns:1fr;gap:6px;}
     .fpanel .in{padding:12px;}
   }
@@ -450,7 +480,8 @@
             <div class="slider"><label for="fHour" id="fHourLab">Drag to pick a time</label><input id="fHour" type="range" min="6" max="25" step="1" value="12"></div></div></div>
           <div class="frow"><span class="flab">Where</span><div class="pills" id="fLoc" role="group" aria-label="Location"></div></div>
           <div class="frow"><span class="flab">Sort</span><div class="pills" id="fSort" role="group" aria-label="Sort order">
-            <button class="pill" data-v="az" aria-pressed="true">A&ndash;Z</button>
+            <button class="pill" data-v="game" aria-pressed="true">Game order</button>
+            <button class="pill" data-v="az" aria-pressed="false">A&ndash;Z</button>
             <button class="pill" data-v="price" aria-pressed="false">Highest price</button>
             <button class="pill" data-v="diff" aria-pressed="false">Hardest</button>
             <button class="pill" data-v="xp" aria-pressed="false">Most XP</button></div></div>
@@ -458,12 +489,20 @@
       </div>
     </details>
   </section>
+  <div class="viewtoggle"><div class="pills" id="fView" role="group" aria-label="View">
+    <button class="pill" data-v="grid" aria-pressed="true">Collection</button>
+    <button class="pill" data-v="cards" aria-pressed="false">Cards</button></div></div>
   <p class="count" id="fCount" role="status"></p>
-  <div id="fSections"></div>
+  <div id="fCollection"><p class="cellhint">Tap a fish for details. Faded fish don&rsquo;t match your filters.</p></div>
+  <div id="fSections" hidden></div>
   <p class="empty" id="fEmpty">Nothing is biting with those settings. Loosen a filter.</p>
 </div>
 
 </main>
+<dialog class="fdlg" id="fDlg" aria-label="Fish details">
+  <div class="dlgbar"><button class="pill" id="dPrev">&larr; Prev</button><span class="dlgcount" id="dCount"></span><button class="pill" id="dNext">Next &rarr;</button><button class="pill" id="dClose" aria-label="Close">Close</button></div>
+  <div id="dCard"></div>
+</dialog>
 <footer class="wrap">Sprites &amp; data from the <a href="https://stardewvalleywiki.com" target="_blank" rel="noopener">Stardew Valley Wiki</a> and the <a href="https://stardewvalleyexpanded.wiki.gg" target="_blank" rel="noopener">SVE Wiki</a>. Fan-made, not affiliated with ConcernedApe.</footer>
 
 <script>
@@ -612,33 +651,45 @@ document.getElementById("fSections").innerHTML = FSECTIONS.map(([k, title, blurb
 }).join("");
 document.getElementById("fLoc").innerHTML = `<button class="pill" data-v="all" aria-pressed="true">Anywhere</button>` + LOC_ORDER.map(l => `<button class="pill" data-v="${esc(l)}" aria-pressed="false">${esc(l)}</button>`).join("");
 
-const fst = {q:"", season:"all", weather:"any", hour:null, loc:"all", sort:"az"};
-const fcards = [...document.querySelectorAll(".fish")];
+const fst = {q:"", season:"all", weather:"any", hour:null, loc:"all", sort:"game", view:"grid"};
 const fdata = new Map(FISH.map(f => [f.name.toLowerCase(), f]));
+const fcards = [...document.querySelectorAll(".fish")];
 const fsecs = [...document.querySelectorAll("#fSections .section")];
 const fEmpty = document.getElementById("fEmpty"), fCount = document.getElementById("fCount");
 const hourLab = document.getElementById("fHourLab"), hourIn = document.getElementById("fHour");
 
+/* collection boards: vanilla first, then SVE */
+document.getElementById("fCollection").insertAdjacentHTML("beforeend", [["Vanilla", f => f.kind !== "sve"], ["Stardew Valley Expanded", f => f.kind === "sve"]].map(([label, pick]) =>
+  `<div class="boardwrap"><h3 class="boardlabel">${label}</h3><div class="board">${FISH.map((f, i) => [f, i]).filter(([f]) => pick(f)).map(([f, i]) => {
+    const src = ASSETS.items[f.name];
+    return `<button class="cell" data-idx="${i}" title="${esc(f.name)}" aria-label="${esc(f.name)}" aria-haspopup="dialog">${src ? `<img src="${src}" alt="" width="48" height="48" loading="lazy" decoding="async">` : esc(f.name[0])}</button>`;
+  }).join("")}</div></div>`).join(""));
+const cells = [...document.querySelectorAll("#fCollection .cell")];
+
+const fMatch = f => (fst.season === "all" || !f.seasons || f.seasons.includes(fst.season))
+  && (fst.weather === "any" || !f.weather || f.weather === "any" || f.weather === fst.weather)
+  && (fst.hour === null || !f.time || f.time.some(([a, b]) => fst.hour >= a && fst.hour < b))
+  && (fst.loc === "all" || f.groups.includes(fst.loc))
+  && (!fst.q || (f.name + " " + f.loc.join(" ")).toLowerCase().includes(fst.q));
+const byName = (a, b) => a.name.localeCompare(b.name);
+const sorters = { game:(a, b) => FISH.indexOf(a) - FISH.indexOf(b), az:byName, price:(a, b) => (b.price || 0) - (a.price || 0) || byName(a, b),
+  diff:(a, b) => (b.diff || 0) - (a.diff || 0) || byName(a, b), xp:(a, b) => (b.xp || 0) - (a.xp || 0) || byName(a, b) };
+let matchList = [];   // matching fish in current sort order (drives Prev/Next in the popup)
+
 function fApply(){
-  let shown = 0;
-  fcards.forEach((c, idx) => {
-    const f = fdata.get(c.dataset.name);
-    const ok = (fst.season === "all" || !f.seasons || f.seasons.includes(fst.season))
-      && (fst.weather === "any" || !f.weather || f.weather === "any" || f.weather === fst.weather)
-      && (fst.hour === null || !f.time || f.time.some(([a, b]) => fst.hour >= a && fst.hour < b))
-      && (fst.loc === "all" || f.groups.includes(fst.loc))
-      && (!fst.q || c.dataset.search.includes(fst.q));
-    c.hidden = !ok; if (ok) shown++;
-  });
-  const key = { az:(a,b) => a.dataset.name.localeCompare(b.dataset.name), price:(a,b) => b.dataset.price - a.dataset.price || a.dataset.name.localeCompare(b.dataset.name),
-    diff:(a,b) => b.dataset.diff - a.dataset.diff || a.dataset.name.localeCompare(b.dataset.name), xp:(a,b) => b.dataset.xp - a.dataset.xp || a.dataset.name.localeCompare(b.dataset.name) }[fst.sort];
-  [...fcards].sort(key).forEach((c, i) => { c.style.order = i; });
+  const rank = new Map([...FISH].sort(sorters[fst.sort]).map((f, i) => [f, i]));
+  matchList = FISH.filter(fMatch).sort(sorters[fst.sort]);
+  const ok = new Set(matchList);
+  fcards.forEach(c => { const f = fdata.get(c.dataset.name); c.hidden = !ok.has(f); c.style.order = rank.get(f); });
+  cells.forEach(c => { const f = FISH[c.dataset.idx]; c.classList.toggle("dim", !ok.has(f)); c.style.order = rank.get(f); });
   fsecs.forEach(sec => { sec.hidden = ![...sec.querySelectorAll(".fish")].some(c => !c.hidden); });
-  fEmpty.style.display = shown ? "none" : "block";
-  fCount.textContent = shown === fcards.length ? `Showing all ${shown} catches` : `Showing ${shown} of ${fcards.length} catches`;
+  document.getElementById("fSections").hidden = fst.view !== "cards";
+  document.getElementById("fCollection").hidden = fst.view !== "grid";
+  fEmpty.style.display = matchList.length ? "none" : "block";
+  fCount.textContent = matchList.length === FISH.length ? `Showing all ${matchList.length} catches` : `Showing ${matchList.length} of ${FISH.length} catches`;
 }
 document.getElementById("fq").addEventListener("input", e => { fst.q = e.target.value.trim().toLowerCase(); fApply(); });
-for (const [id, key] of [["fSeason","season"],["fWeather","weather"],["fLoc","loc"],["fSort","sort"]]){
+for (const [id, key] of [["fSeason","season"],["fWeather","weather"],["fLoc","loc"],["fSort","sort"],["fView","view"]]){
   const g = document.getElementById(id);
   g.addEventListener("click", e => {
     const b = e.target.closest("button"); if (!b) return;
@@ -656,6 +707,32 @@ anyTime.addEventListener("click", () => { fst.hour = null; anyTime.setAttribute(
 if (matchMedia('(max-width:520px)').matches) document.getElementById('ffilters').open = false;
 fApply();
 
+/* popup with Prev/Next through the matching fish */
+const dlg = document.getElementById("fDlg"), dCard = document.getElementById("dCard");
+let dCur = null;
+function showFish(f){
+  dCur = f;
+  dCard.innerHTML = fishCard(f).replace('class="card box fish"', 'class="card box"').replace(" hidden", "");
+  const i = matchList.indexOf(f), n = matchList.length;
+  document.getElementById("dCount").textContent = i >= 0 ? `${i + 1} of ${n}` : "";
+  document.getElementById("dPrev").disabled = i <= 0; document.getElementById("dNext").disabled = i < 0 || i >= n - 1;
+  dlg.scrollTop = 0;
+}
+function stepFish(d){ const i = matchList.indexOf(dCur), t = matchList[i + d]; if (t) showFish(t); }
+document.getElementById("fCollection").addEventListener("click", e => {
+  const c = e.target.closest(".cell"); if (!c) return;
+  showFish(FISH[c.dataset.idx]); if (!dlg.open) dlg.showModal();
+});
+document.getElementById("dPrev").addEventListener("click", () => stepFish(-1));
+document.getElementById("dNext").addEventListener("click", () => stepFish(1));
+document.getElementById("dClose").addEventListener("click", () => dlg.close());
+dlg.addEventListener("click", e => {
+  if (e.target === dlg) { dlg.close(); return; }
+  const b = e.target.closest("[data-goto]"); if (!b) return;
+  dlg.close(); openGifts(b.dataset.goto);
+});
+dlg.addEventListener("keydown", e => { if (e.key === "ArrowLeft") stepFish(-1); if (e.key === "ArrowRight") stepFish(1); });
+
 /* =====================  TABS  ===================== */
 const TABS = ["gifts", "fishing"];
 function showTab(t, push){
@@ -668,11 +745,11 @@ function showTab(t, push){
   document.title = (t === "fishing" ? "Fishing · " : "Gifts · ") + "Stardew Almanac";
 }
 document.querySelector(".tabs").addEventListener("click", e => { const b = e.target.closest(".tab"); if (b){ showTab(b.dataset.tab, true); window.scrollTo({top:0}); } });
-document.getElementById("fSections").addEventListener("click", e => {
-  const b = e.target.closest("[data-goto]"); if (!b) return;
-  const q = document.getElementById("q"); q.value = b.dataset.goto; st.q = b.dataset.goto.toLowerCase(); apply();
+function openGifts(name){
+  const q = document.getElementById("q"); q.value = name; st.q = name.toLowerCase(); apply();
   showTab("gifts", true); window.scrollTo({top:0});
-});
+}
+document.getElementById("fSections").addEventListener("click", e => { const b = e.target.closest("[data-goto]"); if (b) openGifts(b.dataset.goto); });
 window.addEventListener("hashchange", () => showTab(location.hash.replace("#/", ""), false));
 showTab(location.hash.replace("#/", ""), false);
 </script>
