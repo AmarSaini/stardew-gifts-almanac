@@ -30,7 +30,6 @@
     --bachette:#e0508c;
     --towns:#2e9a45;
     --sve:#7a4bd6;
-    --heart:#e8403a;
     --gap:clamp(12px, 2.4vw, 22px);
   }
 
@@ -214,7 +213,7 @@
   }
   .portrait img{width:100%;height:100%;object-fit:cover;}
   .portrait b{font-family:"Press Start 2P",monospace;font-size:1.2rem;color:var(--wood);}
-  .who{min-width:0;display:grid;gap:5px;}
+  .who{min-width:0;display:grid;gap:6px;justify-items:start;}
   .name{font-family:"Press Start 2P",monospace;font-size:.8rem;line-height:1.3;overflow-wrap:anywhere;}
   .badges{display:flex;flex-wrap:wrap;gap:4px;}
   .badge{
@@ -225,7 +224,6 @@
   .card.r-bachelor .in{border-top:8px solid var(--bach);}
   .card.r-bachelorette .in{border-top:8px solid var(--bachette);}
   .card.r-villager .in{border-top:8px solid var(--towns);}
-  .meta{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;}
   .bday{
     display:inline-flex;align-items:center;gap:5px;
     padding:1px 8px 1px 5px;font-size:.88rem;font-weight:600;
@@ -233,8 +231,6 @@
   }
   .bday svg{width:14px;height:14px;display:block;}
   .s-Spring{--sea:#b9e88f;} .s-Summer{--sea:#ffe27a;} .s-Fall{--sea:#f4a55b;} .s-Winter{--sea:#bfe3ff;}
-  .hearts{display:flex;gap:3px;height:14px;}
-  .hearts svg{width:16px;height:14px;display:block;}
   .gifts{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;}
   .gift{
     display:inline-flex;align-items:center;gap:5px;
@@ -267,11 +263,6 @@
 <div class="backdrop" aria-hidden="true"></div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="heart" viewBox="0 0 8 7" shape-rendering="crispEdges">
-    <path fill="#5a1410" d="M1 0h2v1h2V0h2v1h1v3H7v1H6v1H5v1H3V6H2V5H1V4H0V1h1z"/>
-    <path fill="#e8403a" d="M1 1h2v1h2V1h2v2H7v1H6v1H5v1H3V5H2V4H1z"/>
-    <path fill="#ff9a8f" d="M1 1h1v1H1z"/>
-  </symbol>
   <symbol id="g-Spring" viewBox="0 0 7 7" shape-rendering="crispEdges"><path fill="#e0508c" d="M3 0h1v1H3zM1 1h1v1H1zM5 1h1v1H5zM0 3h1v1H0zM6 3h1v1H6zM1 5h1v1H1zM5 5h1v1H5zM3 6h1v1H3z"/><path fill="#4a230c" d="M2 2h3v3H2z"/><path fill="#ffe066" d="M3 3h1v1H3z"/></symbol>
   <symbol id="g-Summer" viewBox="0 0 7 7" shape-rendering="crispEdges"><path fill="#b8620c" d="M3 0h1v1H3zM3 6h1v1H3zM0 3h1v1H0zM6 3h1v1H6zM1 1h1v1H1zM5 1h1v1H5zM1 5h1v1H1zM5 5h1v1H5z"/><path fill="#f5a916" d="M2 2h3v3H2z"/><path fill="#ffe066" d="M3 3h1v1H3z"/></symbol>
   <symbol id="g-Fall" viewBox="0 0 7 7" shape-rendering="crispEdges"><path fill="#7a3f17" d="M3 0h1v1H3zM2 1h3v1H2zM1 2h5v2H1zM2 4h3v1H2zM3 5h1v2H3z"/><path fill="#d2691e" d="M3 1h1v1H3zM2 2h3v2H2zM3 4h1v1H3z"/></symbol>
@@ -355,7 +346,6 @@ const ANY = {
 };
 const ROLE = {bachelor:"Bachelor",bachelorette:"Bachelorette",villager:"Townsfolk"};
 const esc = s => s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const heart = '<svg aria-hidden="true"><use href="#heart"/></svg>';
 
 function icon(item){
   const key = ANY[item] || item;
@@ -377,7 +367,6 @@ function portrait(name){
 }
 
 function card([name, role, src, gifts]){
-  const n = Math.min(5, gifts.length);
   const [ssn, day] = BDAYS[name] || ["", 0];
   return `<article class="card box r-${role}" data-name="${esc(name.toLowerCase())}" data-role="${role}" data-src="${src}" data-season="${ssn}" data-day="${day}" data-bd="${(ssn+" "+day).toLowerCase()}" data-gifts="${esc(gifts.join("|").toLowerCase())}">
     <div class="in">
@@ -386,11 +375,8 @@ function card([name, role, src, gifts]){
         <div class="who">
           <a class="name" href="${wikiUrl(name, src===S)}" target="_blank" rel="noopener">${esc(name)}</a>
           <span class="badges"><span class="badge b-${role}">${ROLE[role]}</span>${src===S?'<span class="badge b-sve">SVE</span>':""}</span>
+          ${ssn?`<span class="bday s-${ssn}" title="Birthday: ${ssn} ${day}"><svg aria-hidden="true"><use href="#g-${ssn}"/></svg>${ssn} ${day}</span>`:""}
         </div>
-      </div>
-      <div class="meta">
-        <div class="hearts" aria-label="${gifts.length} loved gifts">${heart.repeat(n)}</div>
-        ${ssn?`<span class="bday s-${ssn}" title="Birthday: ${ssn} ${day}"><svg aria-hidden="true"><use href="#g-${ssn}"/></svg>${ssn} ${day}</span>`:""}
       </div>
       <ul class="gifts">${gifts.map(gift).join("")}</ul>
     </div></article>`;
