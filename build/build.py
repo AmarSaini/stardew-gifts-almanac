@@ -54,6 +54,7 @@ DATA=[
  ("Susan",T,S,["Blackberry Cobbler","Blueberry Tart","Chocolate Cake","Cookie","Cranberry Candy","Ice Cream","Maple Bar","Pancakes","Pearl","Pink Cake","Poppyseed Muffin","Pumpkin Pie","Rhubarb Pie"]),
  ("Victor",T,S,["Battery Pack","Duck Feather","Lunarite","Spaghetti","Aged Blue Moon Wine","Blue Moon Wine","Butterfish"]),
 ]
+BIRTHDAYS = {"Abigail": ["Fall", 13], "Alex": ["Summer", 13], "Andy": ["Spring", 23], "Caroline": ["Winter", 7], "Claire": ["Fall", 8], "Clint": ["Winter", 26], "Demetrius": ["Summer", 19], "Dwarf": ["Summer", 22], "Elliott": ["Fall", 5], "Emily": ["Spring", 27], "Evelyn": ["Winter", 20], "George": ["Fall", 24], "Gunther": ["Winter", 12], "Gus": ["Summer", 8], "Haley": ["Spring", 14], "Harvey": ["Winter", 14], "Jas": ["Summer", 4], "Jodi": ["Fall", 11], "Kent": ["Spring", 4], "Krobus": ["Winter", 1], "Lance": ["Spring", 8], "Leah": ["Winter", 23], "Leo": ["Summer", 26], "Lewis": ["Spring", 7], "Linus": ["Winter", 3], "Marlon": ["Winter", 19], "Marnie": ["Fall", 18], "Martin": ["Summer", 6], "Maru": ["Summer", 10], "Morgan": ["Fall", 7], "Morris": ["Spring", 2], "Olivia": ["Spring", 15], "Pam": ["Spring", 18], "Penny": ["Fall", 2], "Pierre": ["Spring", 26], "Robin": ["Fall", 21], "Sam": ["Summer", 17], "Sandy": ["Fall", 15], "Scarlett": ["Summer", 7], "Sebastian": ["Winter", 10], "Shane": ["Spring", 20], "Sophia": ["Winter", 27], "Susan": ["Fall", 28], "Victor": ["Summer", 23], "Vincent": ["Spring", 10], "Willy": ["Summer", 24], "Wizard": ["Winter", 17]}
 UNIVERSAL=["Golden Pumpkin","Magic Rock Candy","Pearl","Prismatic Shard","Rabbit's Foot"]
 ANY={"Any Gem (except Diamond)":"Emerald","Any Flower (except Poppy)":"Tulip","Any Vegetable (except Hops/Wheat)":"Parsnip"}
 
@@ -71,6 +72,6 @@ for g in UNIVERSAL:
     else: missing.append(("item",g))
 print("missing:",sorted(set(missing)))
 tpl=open(f"{ROOT}/build/template.html").read()
-out=tpl.replace("/*ASSETS*/",json.dumps({"characters":chars,"items":items},ensure_ascii=False)).replace("/*DATA*/",json.dumps(DATA,ensure_ascii=False))
+out=tpl.replace("/*ASSETS*/",json.dumps({"characters":chars,"items":items},ensure_ascii=False)).replace("/*DATA*/",json.dumps(DATA,ensure_ascii=False)).replace("/*BDAYS*/",json.dumps(BIRTHDAYS))
 open(f"{ROOT}/index.html","w").write(out)
 print(len(chars),"portraits",len(items),"icons")

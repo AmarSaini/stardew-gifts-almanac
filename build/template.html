@@ -134,6 +134,12 @@
   }
   .search input::placeholder{color:var(--ink-soft);}
   .search:focus-within{outline:3px solid var(--gold-hi);outline-offset:2px;}
+.filters{width:100%;display:grid;justify-items:center;}
+  .filters > summary{list-style:none;display:none;cursor:pointer;width:max-content;}
+  .filters > summary::-webkit-details-marker{display:none;}
+  .filters > summary::after{content:" +";}
+  .filters[open] > summary::after{content:" \2212";}
+  .fbody{display:grid;gap:12px;justify-items:center;width:100%;}
   .pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
   .pill{
     cursor:pointer;
@@ -219,6 +225,14 @@
   .card.r-bachelor .in{border-top:8px solid var(--bach);}
   .card.r-bachelorette .in{border-top:8px solid var(--bachette);}
   .card.r-villager .in{border-top:8px solid var(--towns);}
+  .meta{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;}
+  .bday{
+    display:inline-flex;align-items:center;gap:5px;
+    padding:1px 8px 1px 5px;font-size:.88rem;font-weight:600;
+    color:var(--ink);border:3px solid var(--wood);background:var(--sea,#fff);
+  }
+  .bday svg{width:14px;height:14px;display:block;}
+  .s-Spring{--sea:#b9e88f;} .s-Summer{--sea:#ffe27a;} .s-Fall{--sea:#f4a55b;} .s-Winter{--sea:#bfe3ff;}
   .hearts{display:flex;gap:3px;height:14px;}
   .hearts svg{width:16px;height:14px;display:block;}
   .gifts{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;}
@@ -238,6 +252,7 @@
     body{font-size:15px;}
     .grid{grid-template-columns:1fr;}
     .box{--n:4px;}
+    .filters > summary{display:block;margin-bottom:10px;}
     .pills{gap:6px;}
     .pill{padding:5px 9px;min-height:40px;font-size:.85rem;border-width:3px;}
     .tagline{font-size:.85rem;}
@@ -257,6 +272,10 @@
     <path fill="#e8403a" d="M1 1h2v1h2V1h2v2H7v1H6v1H5v1H3V5H2V4H1z"/>
     <path fill="#ff9a8f" d="M1 1h1v1H1z"/>
   </symbol>
+  <symbol id="g-Spring" viewBox="0 0 7 7" shape-rendering="crispEdges"><path fill="#e0508c" d="M3 0h1v1H3zM1 1h1v1H1zM5 1h1v1H5zM0 3h1v1H0zM6 3h1v1H6zM1 5h1v1H1zM5 5h1v1H5zM3 6h1v1H3z"/><path fill="#4a230c" d="M2 2h3v3H2z"/><path fill="#ffe066" d="M3 3h1v1H3z"/></symbol>
+  <symbol id="g-Summer" viewBox="0 0 7 7" shape-rendering="crispEdges"><path fill="#b8620c" d="M3 0h1v1H3zM3 6h1v1H3zM0 3h1v1H0zM6 3h1v1H6zM1 1h1v1H1zM5 1h1v1H5zM1 5h1v1H1zM5 5h1v1H5z"/><path fill="#f5a916" d="M2 2h3v3H2z"/><path fill="#ffe066" d="M3 3h1v1H3z"/></symbol>
+  <symbol id="g-Fall" viewBox="0 0 7 7" shape-rendering="crispEdges"><path fill="#7a3f17" d="M3 0h1v1H3zM2 1h3v1H2zM1 2h5v2H1zM2 4h3v1H2zM3 5h1v2H3z"/><path fill="#d2691e" d="M3 1h1v1H3zM2 2h3v2H2zM3 4h1v1H3z"/></symbol>
+  <symbol id="g-Winter" viewBox="0 0 7 7" shape-rendering="crispEdges"><path fill="#2b6fb8" d="M3 0h1v7H3zM0 3h7v1H0zM1 1h1v1H1zM5 1h1v1H5zM1 5h1v1H1zM5 5h1v1H5z"/></symbol>
 </svg>
 
 <main class="wrap">
@@ -270,17 +289,33 @@
       <svg viewBox="0 0 10 10" shape-rendering="crispEdges" aria-hidden="true"><path fill="#7a3f17" d="M2 0h4v1h1v1h1v4H7v1H6v1H2V7H1V6H0V2h1V1h1z"/><path fill="#fbe3ae" d="M2 1h4v1h1v4H6v1H2V6H1V2h1z"/><path fill="#7a3f17" d="M6 6h1v1h1v1h1v1H8V8H7V7H6z"/></svg>
       <input id="q" type="search" placeholder="Find a villager or a gift" autocomplete="off" enterkeyhint="search" aria-label="Search villagers or gifts">
     </label>
+    <details class="filters" id="filters" open>
+      <summary class="pill">Filters &amp; sort</summary>
+      <div class="fbody">
     <div class="pills" id="roleFilter" role="group" aria-label="Villager type">
       <button class="pill" data-v="all" aria-pressed="true">Everyone</button>
       <button class="pill" data-v="bachelor" aria-pressed="false">Bachelors</button>
       <button class="pill" data-v="bachelorette" aria-pressed="false">Bachelorettes</button>
       <button class="pill" data-v="villager" aria-pressed="false">Townsfolk</button>
     </div>
+    <div class="pills" id="seasonFilter" role="group" aria-label="Birthday season">
+      <button class="pill" data-v="all" aria-pressed="true">Any birthday</button>
+      <button class="pill" data-v="Spring" aria-pressed="false">Spring</button>
+      <button class="pill" data-v="Summer" aria-pressed="false">Summer</button>
+      <button class="pill" data-v="Fall" aria-pressed="false">Fall</button>
+      <button class="pill" data-v="Winter" aria-pressed="false">Winter</button>
+    </div>
+    <div class="pills" id="sortBy" role="group" aria-label="Sort order">
+      <button class="pill" data-v="az" aria-pressed="true">Sort A&ndash;Z</button>
+      <button class="pill" data-v="bday" aria-pressed="false">Sort by birthday</button>
+    </div>
     <div class="pills sve" id="srcFilter" role="group" aria-label="Game version">
       <button class="pill" data-v="all" aria-pressed="true">Vanilla + Expanded</button>
       <button class="pill" data-v="vanilla" aria-pressed="false">Vanilla</button>
       <button class="pill" data-v="sve" aria-pressed="false">Expanded only</button>
     </div>
+      </div>
+    </details>
   </section>
   <p class="count" id="count" role="status"></p>
 
@@ -307,6 +342,8 @@
 <script>
 const ASSETS = /*ASSETS*/;
 const UNIVERSAL = ["Golden Pumpkin","Magic Rock Candy","Pearl","Prismatic Shard","Rabbit's Foot"];
+const BDAYS = /*BDAYS*/;
+const SEASONS = ["Spring","Summer","Fall","Winter"];
 const V = "vanilla", S = "sve";
 /* [name, role, source, gifts[]] */
 const DATA = /*DATA*/;
@@ -341,7 +378,8 @@ function portrait(name){
 
 function card([name, role, src, gifts]){
   const n = Math.min(5, gifts.length);
-  return `<article class="card box r-${role}" data-name="${esc(name.toLowerCase())}" data-role="${role}" data-src="${src}" data-gifts="${esc(gifts.join("|").toLowerCase())}">
+  const [ssn, day] = BDAYS[name] || ["", 0];
+  return `<article class="card box r-${role}" data-name="${esc(name.toLowerCase())}" data-role="${role}" data-src="${src}" data-season="${ssn}" data-day="${day}" data-bd="${(ssn+" "+day).toLowerCase()}" data-gifts="${esc(gifts.join("|").toLowerCase())}">
     <div class="in">
       <div class="head">
         <a class="portrait" href="${wikiUrl(name, src===S)}" target="_blank" rel="noopener" title="Open ${esc(name)} on the wiki">${portrait(name)}</a>
@@ -350,7 +388,10 @@ function card([name, role, src, gifts]){
           <span class="badges"><span class="badge b-${role}">${ROLE[role]}</span>${src===S?'<span class="badge b-sve">SVE</span>':""}</span>
         </div>
       </div>
-      <div class="hearts" aria-label="${gifts.length} loved gifts">${heart.repeat(n)}</div>
+      <div class="meta">
+        <div class="hearts" aria-label="${gifts.length} loved gifts">${heart.repeat(n)}</div>
+        ${ssn?`<span class="bday s-${ssn}" title="Birthday: ${ssn} ${day}"><svg aria-hidden="true"><use href="#g-${ssn}"/></svg>${ssn} ${day}</span>`:""}
+      </div>
       <ul class="gifts">${gifts.map(gift).join("")}</ul>
     </div></article>`;
 }
@@ -359,17 +400,24 @@ document.getElementById("everyone").insertAdjacentHTML("beforeend", UNIVERSAL.ma
 document.getElementById("gridVanilla").innerHTML = DATA.filter(d=>d[2]===V).map(card).join("");
 document.getElementById("gridSve").innerHTML = DATA.filter(d=>d[2]===S).map(card).join("");
 
-const st = {q:"", role:"all", src:"all"};
+const st = {q:"", role:"all", src:"all", season:"all", sort:"az"};
 const cards = [...document.querySelectorAll(".card")];
 const secs = {vanilla:document.getElementById("secVanilla"), sve:document.getElementById("secSve")};
 const count = document.getElementById("count"), empty = document.getElementById("empty");
 
+function sortCards(){
+  const key = c => SEASONS.indexOf(c.dataset.season) * 100 + Number(c.dataset.day);
+  const order = [...cards].sort(st.sort==="bday" ? (a,b)=>key(a)-key(b) : (a,b)=>a.dataset.name.localeCompare(b.dataset.name));
+  order.forEach((c,i)=>{ c.style.order = i; });
+}
 function apply(){
+  sortCards();
   let shown = 0, per = {vanilla:0, sve:0};
   for (const c of cards){
     const ok = (st.role==="all"||c.dataset.role===st.role)
             && (st.src==="all"||c.dataset.src===st.src)
-            && (!st.q || c.dataset.name.includes(st.q) || c.dataset.gifts.includes(st.q));
+            && (st.season==="all"||c.dataset.season===st.season)
+            && (!st.q || c.dataset.name.includes(st.q) || c.dataset.gifts.includes(st.q) || c.dataset.bd.includes(st.q));
     c.hidden = !ok;
     if (ok){ shown++; per[c.dataset.src]++; }
   }
@@ -379,7 +427,7 @@ function apply(){
   count.textContent = shown === cards.length ? `Showing all ${shown} villagers` : `Showing ${shown} of ${cards.length} villagers`;
 }
 document.getElementById("q").addEventListener("input", e => { st.q = e.target.value.trim().toLowerCase(); apply(); });
-for (const [id,key] of [["roleFilter","role"],["srcFilter","src"]]){
+for (const [id,key] of [["roleFilter","role"],["srcFilter","src"],["seasonFilter","season"],["sortBy","sort"]]){
   const g = document.getElementById(id);
   g.addEventListener("click", e => {
     const b = e.target.closest("button"); if (!b) return;
@@ -388,6 +436,7 @@ for (const [id,key] of [["roleFilter","role"],["srcFilter","src"]]){
     apply();
   });
 }
+if (matchMedia('(max-width:520px)').matches) document.getElementById('filters').open = false;
 apply();
 </script>
 </body>

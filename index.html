@@ -134,6 +134,12 @@
   }
   .search input::placeholder{color:var(--ink-soft);}
   .search:focus-within{outline:3px solid var(--gold-hi);outline-offset:2px;}
+.filters{width:100%;display:grid;justify-items:center;}
+  .filters > summary{list-style:none;display:none;cursor:pointer;width:max-content;}
+  .filters > summary::-webkit-details-marker{display:none;}
+  .filters > summary::after{content:" +";}
+  .filters[open] > summary::after{content:" \2212";}
+  .fbody{display:grid;gap:12px;justify-items:center;width:100%;}
   .pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
   .pill{
     cursor:pointer;
@@ -219,6 +225,14 @@
   .card.r-bachelor .in{border-top:8px solid var(--bach);}
   .card.r-bachelorette .in{border-top:8px solid var(--bachette);}
   .card.r-villager .in{border-top:8px solid var(--towns);}
+  .meta{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;}
+  .bday{
+    display:inline-flex;align-items:center;gap:5px;
+    padding:1px 8px 1px 5px;font-size:.88rem;font-weight:600;
+    color:var(--ink);border:3px solid var(--wood);background:var(--sea,#fff);
+  }
+  .bday svg{width:14px;height:14px;display:block;}
+  .s-Spring{--sea:#b9e88f;} .s-Summer{--sea:#ffe27a;} .s-Fall{--sea:#f4a55b;} .s-Winter{--sea:#bfe3ff;}
   .hearts{display:flex;gap:3px;height:14px;}
   .hearts svg{width:16px;height:14px;display:block;}
   .gifts{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;}
@@ -238,6 +252,7 @@
     body{font-size:15px;}
     .grid{grid-template-columns:1fr;}
     .box{--n:4px;}
+    .filters > summary{display:block;margin-bottom:10px;}
     .pills{gap:6px;}
     .pill{padding:5px 9px;min-height:40px;font-size:.85rem;border-width:3px;}
     .tagline{font-size:.85rem;}
@@ -257,6 +272,10 @@
     <path fill="#e8403a" d="M1 1h2v1h2V1h2v2H7v1H6v1H5v1H3V5H2V4H1z"/>
     <path fill="#ff9a8f" d="M1 1h1v1H1z"/>
   </symbol>
+  <symbol id="g-Spring" viewBox="0 0 7 7" shape-rendering="crispEdges"><path fill="#e0508c" d="M3 0h1v1H3zM1 1h1v1H1zM5 1h1v1H5zM0 3h1v1H0zM6 3h1v1H6zM1 5h1v1H1zM5 5h1v1H5zM3 6h1v1H3z"/><path fill="#4a230c" d="M2 2h3v3H2z"/><path fill="#ffe066" d="M3 3h1v1H3z"/></symbol>
+  <symbol id="g-Summer" viewBox="0 0 7 7" shape-rendering="crispEdges"><path fill="#b8620c" d="M3 0h1v1H3zM3 6h1v1H3zM0 3h1v1H0zM6 3h1v1H6zM1 1h1v1H1zM5 1h1v1H5zM1 5h1v1H1zM5 5h1v1H5z"/><path fill="#f5a916" d="M2 2h3v3H2z"/><path fill="#ffe066" d="M3 3h1v1H3z"/></symbol>
+  <symbol id="g-Fall" viewBox="0 0 7 7" shape-rendering="crispEdges"><path fill="#7a3f17" d="M3 0h1v1H3zM2 1h3v1H2zM1 2h5v2H1zM2 4h3v1H2zM3 5h1v2H3z"/><path fill="#d2691e" d="M3 1h1v1H3zM2 2h3v2H2zM3 4h1v1H3z"/></symbol>
+  <symbol id="g-Winter" viewBox="0 0 7 7" shape-rendering="crispEdges"><path fill="#2b6fb8" d="M3 0h1v7H3zM0 3h7v1H0zM1 1h1v1H1zM5 1h1v1H5zM1 5h1v1H1zM5 5h1v1H5z"/></symbol>
 </svg>
 
 <main class="wrap">
@@ -270,17 +289,33 @@
       <svg viewBox="0 0 10 10" shape-rendering="crispEdges" aria-hidden="true"><path fill="#7a3f17" d="M2 0h4v1h1v1h1v4H7v1H6v1H2V7H1V6H0V2h1V1h1z"/><path fill="#fbe3ae" d="M2 1h4v1h1v4H6v1H2V6H1V2h1z"/><path fill="#7a3f17" d="M6 6h1v1h1v1h1v1H8V8H7V7H6z"/></svg>
       <input id="q" type="search" placeholder="Find a villager or a gift" autocomplete="off" enterkeyhint="search" aria-label="Search villagers or gifts">
     </label>
+    <details class="filters" id="filters" open>
+      <summary class="pill">Filters &amp; sort</summary>
+      <div class="fbody">
     <div class="pills" id="roleFilter" role="group" aria-label="Villager type">
       <button class="pill" data-v="all" aria-pressed="true">Everyone</button>
       <button class="pill" data-v="bachelor" aria-pressed="false">Bachelors</button>
       <button class="pill" data-v="bachelorette" aria-pressed="false">Bachelorettes</button>
       <button class="pill" data-v="villager" aria-pressed="false">Townsfolk</button>
     </div>
+    <div class="pills" id="seasonFilter" role="group" aria-label="Birthday season">
+      <button class="pill" data-v="all" aria-pressed="true">Any birthday</button>
+      <button class="pill" data-v="Spring" aria-pressed="false">Spring</button>
+      <button class="pill" data-v="Summer" aria-pressed="false">Summer</button>
+      <button class="pill" data-v="Fall" aria-pressed="false">Fall</button>
+      <button class="pill" data-v="Winter" aria-pressed="false">Winter</button>
+    </div>
+    <div class="pills" id="sortBy" role="group" aria-label="Sort order">
+      <button class="pill" data-v="az" aria-pressed="true">Sort A&ndash;Z</button>
+      <button class="pill" data-v="bday" aria-pressed="false">Sort by birthday</button>
+    </div>
     <div class="pills sve" id="srcFilter" role="group" aria-label="Game version">
       <button class="pill" data-v="all" aria-pressed="true">Vanilla + Expanded</button>
       <button class="pill" data-v="vanilla" aria-pressed="false">Vanilla</button>
       <button class="pill" data-v="sve" aria-pressed="false">Expanded only</button>
     </div>
+      </div>
+    </details>
   </section>
   <p class="count" id="count" role="status"></p>
 
@@ -307,6 +342,8 @@
 <script>
 const ASSETS = {"characters": {"Abigail": "assets/characters/abigail.png", "Alex": "assets/characters/alex.png", "Caroline": "assets/characters/caroline.png", "Clint": "assets/characters/clint.png", "Demetrius": "assets/characters/demetrius.png", "Dwarf": "assets/characters/dwarf.png", "Elliott": "assets/characters/elliott.png", "Emily": "assets/characters/emily.png", "Evelyn": "assets/characters/evelyn.png", "George": "assets/characters/george.png", "Gus": "assets/characters/gus.png", "Haley": "assets/characters/haley.png", "Harvey": "assets/characters/harvey.png", "Jas": "assets/characters/jas.png", "Jodi": "assets/characters/jodi.png", "Kent": "assets/characters/kent.png", "Krobus": "assets/characters/krobus.png", "Leah": "assets/characters/leah.png", "Leo": "assets/characters/leo.png", "Lewis": "assets/characters/lewis.png", "Linus": "assets/characters/linus.png", "Marnie": "assets/characters/marnie.png", "Maru": "assets/characters/maru.png", "Pam": "assets/characters/pam.png", "Penny": "assets/characters/penny.png", "Pierre": "assets/characters/pierre.png", "Robin": "assets/characters/robin.png", "Sam": "assets/characters/sam.png", "Sandy": "assets/characters/sandy.png", "Sebastian": "assets/characters/sebastian.png", "Shane": "assets/characters/shane.png", "Vincent": "assets/characters/vincent.png", "Willy": "assets/characters/willy.png", "Wizard": "assets/characters/wizard.png", "Andy": "assets/characters/andy.png", "Claire": "assets/characters/claire.png", "Gunther": "assets/characters/gunther.png", "Lance": "assets/characters/lance.png", "Marlon": "assets/characters/marlon.png", "Martin": "assets/characters/martin.png", "Morgan": "assets/characters/morgan.png", "Morris": "assets/characters/morris.png", "Olivia": "assets/characters/olivia.png", "Scarlett": "assets/characters/scarlett.png", "Sophia": "assets/characters/sophia.png", "Susan": "assets/characters/susan.png", "Victor": "assets/characters/victor.png"}, "items": {"Amethyst": "assets/items/amethyst.png", "Banana Pudding": "assets/items/banana-pudding.png", "Blackberry Cobbler": "assets/items/blackberry-cobbler.png", "Chocolate Cake": "assets/items/chocolate-cake.png", "Pumpkin": "assets/items/pumpkin.png", "Spicy Eel": "assets/items/spicy-eel.png", "Complete Breakfast": "assets/items/complete-breakfast.png", "Salmon Dinner": "assets/items/salmon-dinner.png", "Fish Taco": "assets/items/fish-taco.png", "Green Tea": "assets/items/green-tea.png", "Summer Spangle": "assets/items/summer-spangle.png", "Tropical Curry": "assets/items/tropical-curry.png", "Emerald": "assets/items/emerald.png", "Artichoke Dip": "assets/items/artichoke-dip.png", "Fiddlehead Risotto": "assets/items/fiddlehead-risotto.png", "Bean Hotpot": "assets/items/bean-hotpot.png", "Ice Cream": "assets/items/ice-cream.png", "Rice Pudding": "assets/items/rice-pudding.png", "Crab Cakes": "assets/items/crab-cakes.png", "Lobster": "assets/items/lobster.png", "Pomegranate": "assets/items/pomegranate.png", "Tom Kha Soup": "assets/items/tom-kha-soup.png", "Cloth": "assets/items/cloth.png", "Parrot Egg": "assets/items/parrot-egg.png", "Survival Burger": "assets/items/survival-burger.png", "Beet": "assets/items/beet.png", "Diamond": "assets/items/diamond.png", "Fairy Rose": "assets/items/fairy-rose.png", "Raisins": "assets/items/raisins.png", "Stuffing": "assets/items/stuffing.png", "Tulip": "assets/items/tulip.png", "Fried Mushroom": "assets/items/fried-mushroom.png", "Escargot": "assets/items/escargot.png", "Orange": "assets/items/orange.png", "Fruit Salad": "assets/items/fruit-salad.png", "Pink Cake": "assets/items/pink-cake.png", "Sunflower": "assets/items/sunflower.png", "Coffee": "assets/items/coffee.png", "Pickles": "assets/items/pickles.png", "Super Meal": "assets/items/super-meal.png", "Truffle Oil": "assets/items/truffle-oil.png", "Wine": "assets/items/wine.png", "Plum Pudding": "assets/items/plum-pudding.png", "Parsnip": "assets/items/parsnip.png", "Crispy Bass": "assets/items/crispy-bass.png", "Eggplant Parmesan": "assets/items/eggplant-parmesan.png", "Fried Eel": "assets/items/fried-eel.png", "Pancakes": "assets/items/pancakes.png", "Rhubarb Pie": "assets/items/rhubarb-pie.png", "Vegetable Medley": "assets/items/vegetable-medley.png", "Roasted Hazelnuts": "assets/items/roasted-hazelnuts.png", "Seafoam Pudding": "assets/items/seafoam-pudding.png", "Void Mayonnaise": "assets/items/void-mayonnaise.png", "Goat Cheese": "assets/items/goat-cheese.png", "Poppyseed Muffin": "assets/items/poppyseed-muffin.png", "Salad": "assets/items/salad.png", "Stir Fry": "assets/items/stir-fry.png", "Truffle": "assets/items/truffle.png", "Poi": "assets/items/poi.png", "Autumn's Bounty": "assets/items/autumn-s-bounty.png", "Glazed Yams": "assets/items/glazed-yams.png", "Blueberry Tart": "assets/items/blueberry-tart.png", "Dish O' The Sea": "assets/items/dish-o-the-sea.png", "Yam": "assets/items/yam.png", "Farmer's Lunch": "assets/items/farmer-s-lunch.png", "Pumpkin Pie": "assets/items/pumpkin-pie.png", "Cheese Cauliflower": "assets/items/cheese-cauliflower.png", "Miner's Treat": "assets/items/miner-s-treat.png", "Pepper Poppers": "assets/items/pepper-poppers.png", "Radioactive Bar": "assets/items/radioactive-bar.png", "Beer": "assets/items/beer.png", "Mead": "assets/items/mead.png", "Pale Ale": "assets/items/pale-ale.png", "Piña Colada": "assets/items/pi-a-colada.png", "Parsnip Soup": "assets/items/parsnip-soup.png", "Poppy": "assets/items/poppy.png", "Red Plate": "assets/items/red-plate.png", "Roots Platter": "assets/items/roots-platter.png", "Fried Calamari": "assets/items/fried-calamari.png", "Peach": "assets/items/peach.png", "Spaghetti": "assets/items/spaghetti.png", "Maple Bar": "assets/items/maple-bar.png", "Pizza": "assets/items/pizza.png", "Crocus": "assets/items/crocus.png", "Mango Sticky Rice": "assets/items/mango-sticky-rice.png", "Sweet Pea": "assets/items/sweet-pea.png", "Frog Egg": "assets/items/frog-egg.png", "Obsidian": "assets/items/obsidian.png", "Pumpkin Soup": "assets/items/pumpkin-soup.png", "Sashimi": "assets/items/sashimi.png", "Void Egg": "assets/items/void-egg.png", "Cranberry Candy": "assets/items/cranberry-candy.png", "Ginger Ale": "assets/items/ginger-ale.png", "Snail": "assets/items/snail.png", "Catfish": "assets/items/catfish.png", "Gold Bar": "assets/items/gold-bar.png", "Iridium Bar": "assets/items/iridium-bar.png", "Octopus": "assets/items/octopus.png", "Sea Cucumber": "assets/items/sea-cucumber.png", "Sturgeon": "assets/items/sturgeon.png", "Book of Mysteries": "assets/items/book-of-mysteries.png", "Solar Essence": "assets/items/solar-essence.png", "Super Cucumber": "assets/items/super-cucumber.png", "Void Essence": "assets/items/void-essence.png", "Butterfish": "assets/items/butterfish.png", "King Salmon": "assets/items/king-salmon.png", "Glazed Butterfish": "assets/items/glazed-butterfish.png", "Apricot": "assets/items/apricot.png", "Energy Tonic": "assets/items/energy-tonic.png", "Bruschetta": "assets/items/bruschetta.png", "Ocean Stone": "assets/items/ocean-stone.png", "Petrified Slime": "assets/items/petrified-slime.png", "Elvish Jewelry": "assets/items/elvish-jewelry.png", "Ornamental Fan": "assets/items/ornamental-fan.png", "Dinosaur Egg": "assets/items/dinosaur-egg.png", "Rare Disc": "assets/items/rare-disc.png", "Ancient Sword": "assets/items/ancient-sword.png", "Dwarvish Helm": "assets/items/dwarvish-helm.png", "Dwarf Gadget": "assets/items/dwarf-gadget.png", "Golden Mask": "assets/items/golden-mask.png", "Golden Relic": "assets/items/golden-relic.png", "Star Shards": "assets/items/star-shards.png", "Aged Blue Moon Wine": "assets/items/aged-blue-moon-wine.png", "Golden Pumpkin": "assets/items/golden-pumpkin.png", "Swirl Stone": "assets/items/swirl-stone.png", "Void Shard": "assets/items/void-shard.png", "Galaxy Soul": "assets/items/galaxy-soul.png", "Daggerfish": "assets/items/daggerfish.png", "Torpedo Trout": "assets/items/torpedo-trout.png", "Gemfish": "assets/items/gemfish.png", "Monster Mushroom": "assets/items/monster-mushroom.png", "Green Mushroom": "assets/items/green-mushroom.png", "Slime Egg": "assets/items/slime-egg.png", "Armor Elixir": "assets/items/armor-elixir.png", "Hero Elixir": "assets/items/hero-elixir.png", "Haste Elixir": "assets/items/haste-elixir.png", "Void Delight": "assets/items/void-delight.png", "Life Elixir": "assets/items/life-elixir.png", "Juice": "assets/items/juice.png", "Big Bark Burger": "assets/items/big-bark-burger.png", "Frog": "assets/items/frog.png", "Chowder": "assets/items/chowder.png", "Lobster Bisque": "assets/items/lobster-bisque.png", "Pearl": "assets/items/pearl.png", "Prismatic Shard": "assets/items/prismatic-shard.png", "Rabbit's Foot": "assets/items/rabbit-s-foot.png", "Blue Moon Wine": "assets/items/blue-moon-wine.png", "Duck Feather": "assets/items/duck-feather.png", "L. Goat Milk": "assets/items/l-goat-milk.png", "Honey": "assets/items/honey.png", "Cherry": "assets/items/cherry.png", "Maple Syrup": "assets/items/maple-syrup.png", "Jade": "assets/items/jade.png", "Grampleton Orange Chicken": "assets/items/grampleton-orange-chicken.png", "Fairy Stone": "assets/items/fairy-stone.png", "Puppyfish": "assets/items/puppyfish.png", "Cookie": "assets/items/cookie.png", "Battery Pack": "assets/items/battery-pack.png", "Lunarite": "assets/items/lunarite.png", "Magic Rock Candy": "assets/items/magic-rock-candy.png"}};
 const UNIVERSAL = ["Golden Pumpkin","Magic Rock Candy","Pearl","Prismatic Shard","Rabbit's Foot"];
+const BDAYS = {"Abigail": ["Fall", 13], "Alex": ["Summer", 13], "Andy": ["Spring", 23], "Caroline": ["Winter", 7], "Claire": ["Fall", 8], "Clint": ["Winter", 26], "Demetrius": ["Summer", 19], "Dwarf": ["Summer", 22], "Elliott": ["Fall", 5], "Emily": ["Spring", 27], "Evelyn": ["Winter", 20], "George": ["Fall", 24], "Gunther": ["Winter", 12], "Gus": ["Summer", 8], "Haley": ["Spring", 14], "Harvey": ["Winter", 14], "Jas": ["Summer", 4], "Jodi": ["Fall", 11], "Kent": ["Spring", 4], "Krobus": ["Winter", 1], "Lance": ["Spring", 8], "Leah": ["Winter", 23], "Leo": ["Summer", 26], "Lewis": ["Spring", 7], "Linus": ["Winter", 3], "Marlon": ["Winter", 19], "Marnie": ["Fall", 18], "Martin": ["Summer", 6], "Maru": ["Summer", 10], "Morgan": ["Fall", 7], "Morris": ["Spring", 2], "Olivia": ["Spring", 15], "Pam": ["Spring", 18], "Penny": ["Fall", 2], "Pierre": ["Spring", 26], "Robin": ["Fall", 21], "Sam": ["Summer", 17], "Sandy": ["Fall", 15], "Scarlett": ["Summer", 7], "Sebastian": ["Winter", 10], "Shane": ["Spring", 20], "Sophia": ["Winter", 27], "Susan": ["Fall", 28], "Victor": ["Summer", 23], "Vincent": ["Spring", 10], "Willy": ["Summer", 24], "Wizard": ["Winter", 17]};
+const SEASONS = ["Spring","Summer","Fall","Winter"];
 const V = "vanilla", S = "sve";
 /* [name, role, source, gifts[]] */
 const DATA = [["Abigail", "bachelorette", "vanilla", ["Amethyst", "Banana Pudding", "Blackberry Cobbler", "Chocolate Cake", "Pumpkin", "Spicy Eel"]], ["Alex", "bachelor", "vanilla", ["Complete Breakfast", "Salmon Dinner"]], ["Caroline", "villager", "vanilla", ["Fish Taco", "Green Tea", "Summer Spangle", "Tropical Curry"]], ["Clint", "villager", "vanilla", ["Any Gem (except Diamond)", "Artichoke Dip", "Fiddlehead Risotto"]], ["Demetrius", "villager", "vanilla", ["Bean Hotpot", "Ice Cream", "Rice Pudding"]], ["Dwarf", "villager", "vanilla", ["Any Gem (except Diamond)"]], ["Elliott", "bachelor", "vanilla", ["Crab Cakes", "Lobster", "Pomegranate", "Tom Kha Soup"]], ["Emily", "bachelorette", "vanilla", ["Cloth", "Parrot Egg", "Survival Burger", "Any Gem (except Diamond)"]], ["Evelyn", "villager", "vanilla", ["Beet", "Chocolate Cake", "Diamond", "Fairy Rose", "Raisins", "Stuffing", "Tulip"]], ["George", "villager", "vanilla", ["Fried Mushroom", "Any Flower (except Poppy)"]], ["Gus", "villager", "vanilla", ["Diamond", "Escargot", "Fish Taco", "Orange", "Tropical Curry"]], ["Haley", "bachelorette", "vanilla", ["Fruit Salad", "Pink Cake", "Sunflower"]], ["Harvey", "bachelor", "vanilla", ["Coffee", "Pickles", "Super Meal", "Truffle Oil", "Wine"]], ["Jas", "villager", "vanilla", ["Fairy Rose", "Pink Cake", "Plum Pudding", "Any Vegetable (except Hops/Wheat)"]], ["Jodi", "villager", "vanilla", ["Chocolate Cake", "Crispy Bass", "Diamond", "Eggplant Parmesan", "Fried Eel", "Pancakes", "Rhubarb Pie", "Vegetable Medley"]], ["Kent", "villager", "vanilla", ["Fiddlehead Risotto", "Roasted Hazelnuts"]], ["Krobus", "villager", "vanilla", ["Diamond", "Pumpkin", "Seafoam Pudding", "Void Mayonnaise"]], ["Leah", "bachelorette", "vanilla", ["Goat Cheese", "Poppyseed Muffin", "Salad", "Stir Fry", "Truffle", "Vegetable Medley", "Wine"]], ["Leo", "bachelor", "vanilla", ["Poi"]], ["Lewis", "villager", "vanilla", ["Autumn's Bounty", "Glazed Yams", "Green Tea", "Vegetable Medley"]], ["Linus", "villager", "vanilla", ["Blueberry Tart", "Dish O' The Sea", "Yam"]], ["Marnie", "villager", "vanilla", ["Diamond", "Farmer's Lunch", "Pink Cake", "Pumpkin Pie"]], ["Maru", "bachelorette", "vanilla", ["Cheese Cauliflower", "Diamond", "Miner's Treat", "Pepper Poppers", "Radioactive Bar", "Rhubarb Pie"]], ["Pam", "villager", "vanilla", ["Beer", "Glazed Yams", "Mead", "Pale Ale", "Parsnip", "Piña Colada", "Parsnip Soup"]], ["Penny", "bachelorette", "vanilla", ["Diamond", "Emerald", "Poppy", "Poppyseed Muffin", "Red Plate", "Roots Platter", "Tom Kha Soup"]], ["Pierre", "villager", "vanilla", ["Fried Calamari"]], ["Robin", "villager", "vanilla", ["Goat Cheese", "Peach", "Spaghetti"]], ["Sam", "bachelor", "vanilla", ["Maple Bar", "Pizza", "Any Vegetable (except Hops/Wheat)"]], ["Sandy", "villager", "vanilla", ["Crocus", "Mango Sticky Rice", "Sweet Pea"]], ["Sebastian", "bachelor", "vanilla", ["Frog Egg", "Obsidian", "Pumpkin Soup", "Sashimi", "Void Egg"]], ["Shane", "bachelor", "vanilla", ["Beer", "Pepper Poppers", "Pizza"]], ["Vincent", "villager", "vanilla", ["Cranberry Candy", "Frog Egg", "Ginger Ale", "Pink Cake", "Snail"]], ["Willy", "villager", "vanilla", ["Catfish", "Diamond", "Gold Bar", "Iridium Bar", "Mead", "Octopus", "Sea Cucumber", "Sturgeon"]], ["Wizard", "villager", "vanilla", ["Book of Mysteries", "Solar Essence", "Super Cucumber", "Void Essence"]], ["Andy", "bachelor", "sve", ["Beer", "Butterfish", "Farmer's Lunch", "Mead", "King Salmon", "Glazed Butterfish", "Pale Ale"]], ["Claire", "bachelorette", "sve", ["Apricot", "Green Tea", "Energy Tonic", "Sunflower", "Bruschetta", "Ocean Stone", "Glazed Butterfish"]], ["Gunther", "villager", "sve", ["Bean Hotpot", "Petrified Slime", "Salmon Dinner", "Elvish Jewelry", "Ornamental Fan", "Dinosaur Egg", "Rare Disc", "Ancient Sword", "Dwarvish Helm", "Dwarf Gadget", "Golden Mask", "Golden Relic", "Star Shards"]], ["Lance", "villager", "sve", ["Tropical Curry", "Aged Blue Moon Wine", "Golden Pumpkin", "Swirl Stone", "Void Shard", "Galaxy Soul", "Daggerfish", "Torpedo Trout", "Gemfish", "Monster Mushroom", "Green Mushroom"]], ["Marlon", "villager", "sve", ["Roots Platter", "Slime Egg", "Aged Blue Moon Wine", "Armor Elixir", "Hero Elixir", "Haste Elixir", "Void Delight", "Life Elixir"]], ["Martin", "villager", "sve", ["Juice", "Ice Cream", "Big Bark Burger"]], ["Morgan", "villager", "sve", ["Iridium Bar", "Void Egg", "Void Mayonnaise", "Frog"]], ["Morris", "villager", "sve", ["Aged Blue Moon Wine", "Chowder", "Golden Pumpkin", "Lobster Bisque", "Pearl", "Prismatic Shard", "Rabbit's Foot", "Star Shards", "Truffle Oil"]], ["Olivia", "villager", "sve", ["Aged Blue Moon Wine", "Blue Moon Wine", "Wine", "Golden Mask", "Golden Relic", "Chocolate Cake", "Pink Cake"]], ["Scarlett", "villager", "sve", ["Goat Cheese", "Duck Feather", "L. Goat Milk", "Honey", "Cherry", "Maple Syrup", "Glazed Yams", "Pink Cake", "Chocolate Cake", "Jade", "Rabbit's Foot"]], ["Sophia", "villager", "sve", ["Grampleton Orange Chicken", "Fairy Stone", "Puppyfish", "Fairy Rose"]], ["Susan", "villager", "sve", ["Blackberry Cobbler", "Blueberry Tart", "Chocolate Cake", "Cookie", "Cranberry Candy", "Ice Cream", "Maple Bar", "Pancakes", "Pearl", "Pink Cake", "Poppyseed Muffin", "Pumpkin Pie", "Rhubarb Pie"]], ["Victor", "villager", "sve", ["Battery Pack", "Duck Feather", "Lunarite", "Spaghetti", "Aged Blue Moon Wine", "Blue Moon Wine", "Butterfish"]]];
@@ -341,7 +378,8 @@ function portrait(name){
 
 function card([name, role, src, gifts]){
   const n = Math.min(5, gifts.length);
-  return `<article class="card box r-${role}" data-name="${esc(name.toLowerCase())}" data-role="${role}" data-src="${src}" data-gifts="${esc(gifts.join("|").toLowerCase())}">
+  const [ssn, day] = BDAYS[name] || ["", 0];
+  return `<article class="card box r-${role}" data-name="${esc(name.toLowerCase())}" data-role="${role}" data-src="${src}" data-season="${ssn}" data-day="${day}" data-bd="${(ssn+" "+day).toLowerCase()}" data-gifts="${esc(gifts.join("|").toLowerCase())}">
     <div class="in">
       <div class="head">
         <a class="portrait" href="${wikiUrl(name, src===S)}" target="_blank" rel="noopener" title="Open ${esc(name)} on the wiki">${portrait(name)}</a>
@@ -350,7 +388,10 @@ function card([name, role, src, gifts]){
           <span class="badges"><span class="badge b-${role}">${ROLE[role]}</span>${src===S?'<span class="badge b-sve">SVE</span>':""}</span>
         </div>
       </div>
-      <div class="hearts" aria-label="${gifts.length} loved gifts">${heart.repeat(n)}</div>
+      <div class="meta">
+        <div class="hearts" aria-label="${gifts.length} loved gifts">${heart.repeat(n)}</div>
+        ${ssn?`<span class="bday s-${ssn}" title="Birthday: ${ssn} ${day}"><svg aria-hidden="true"><use href="#g-${ssn}"/></svg>${ssn} ${day}</span>`:""}
+      </div>
       <ul class="gifts">${gifts.map(gift).join("")}</ul>
     </div></article>`;
 }
@@ -359,17 +400,24 @@ document.getElementById("everyone").insertAdjacentHTML("beforeend", UNIVERSAL.ma
 document.getElementById("gridVanilla").innerHTML = DATA.filter(d=>d[2]===V).map(card).join("");
 document.getElementById("gridSve").innerHTML = DATA.filter(d=>d[2]===S).map(card).join("");
 
-const st = {q:"", role:"all", src:"all"};
+const st = {q:"", role:"all", src:"all", season:"all", sort:"az"};
 const cards = [...document.querySelectorAll(".card")];
 const secs = {vanilla:document.getElementById("secVanilla"), sve:document.getElementById("secSve")};
 const count = document.getElementById("count"), empty = document.getElementById("empty");
 
+function sortCards(){
+  const key = c => SEASONS.indexOf(c.dataset.season) * 100 + Number(c.dataset.day);
+  const order = [...cards].sort(st.sort==="bday" ? (a,b)=>key(a)-key(b) : (a,b)=>a.dataset.name.localeCompare(b.dataset.name));
+  order.forEach((c,i)=>{ c.style.order = i; });
+}
 function apply(){
+  sortCards();
   let shown = 0, per = {vanilla:0, sve:0};
   for (const c of cards){
     const ok = (st.role==="all"||c.dataset.role===st.role)
             && (st.src==="all"||c.dataset.src===st.src)
-            && (!st.q || c.dataset.name.includes(st.q) || c.dataset.gifts.includes(st.q));
+            && (st.season==="all"||c.dataset.season===st.season)
+            && (!st.q || c.dataset.name.includes(st.q) || c.dataset.gifts.includes(st.q) || c.dataset.bd.includes(st.q));
     c.hidden = !ok;
     if (ok){ shown++; per[c.dataset.src]++; }
   }
@@ -379,7 +427,7 @@ function apply(){
   count.textContent = shown === cards.length ? `Showing all ${shown} villagers` : `Showing ${shown} of ${cards.length} villagers`;
 }
 document.getElementById("q").addEventListener("input", e => { st.q = e.target.value.trim().toLowerCase(); apply(); });
-for (const [id,key] of [["roleFilter","role"],["srcFilter","src"]]){
+for (const [id,key] of [["roleFilter","role"],["srcFilter","src"],["seasonFilter","season"],["sortBy","sort"]]){
   const g = document.getElementById(id);
   g.addEventListener("click", e => {
     const b = e.target.closest("button"); if (!b) return;
@@ -388,6 +436,7 @@ for (const [id,key] of [["roleFilter","role"],["srcFilter","src"]]){
     apply();
   });
 }
+if (matchMedia('(max-width:520px)').matches) document.getElementById('filters').open = false;
 apply();
 </script>
 </body>
