@@ -204,7 +204,7 @@
   }
   .card{filter:drop-shadow(0 6px 0 rgba(0,0,0,.32));}
   .card .in{display:flex;flex-direction:column;gap:10px;}
-  .head{display:flex;align-items:center;gap:12px;}
+  .head{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px;}
   .portrait{
     flex:none;width:64px;height:64px;
     background:linear-gradient(180deg,var(--parch-2),#e0b060);
@@ -213,14 +213,15 @@
   }
   .portrait img{width:100%;height:100%;object-fit:cover;}
   .portrait b{font-family:"Press Start 2P",monospace;font-size:1.2rem;color:var(--wood);}
-  .who{min-width:0;display:grid;gap:6px;justify-items:start;}
-  .name{font-family:"Press Start 2P",monospace;font-size:.8rem;line-height:1.3;overflow-wrap:anywhere;}
+  .who{min-width:min-content;flex:1 1 auto;display:grid;}
+  .name{font-family:"Press Start 2P",monospace;font-size:.8rem;line-height:1.3;}
   .card .in{border-top:8px solid var(--sea,var(--wood));}
   .bday{
     display:inline-flex;align-items:center;gap:5px;
     padding:1px 8px 1px 5px;font-size:.88rem;font-weight:600;
     color:var(--ink);border:3px solid var(--wood);background:var(--sea,#fff);
   }
+  .head .bday{flex:none;margin-left:auto;}
   .bday svg{width:14px;height:14px;display:block;}
   .s-Spring{--sea:#b9e88f;} .s-Summer{--sea:#ffe27a;} .s-Fall{--sea:#f4a55b;} .s-Winter{--sea:#bfe3ff;}
   .gifts{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;}
@@ -365,8 +366,8 @@ function card([name, role, src, gifts]){
         <a class="portrait" href="${wikiUrl(name, src===S)}" target="_blank" rel="noopener" title="Open ${esc(name)} on the wiki">${portrait(name)}</a>
         <div class="who">
           <a class="name" href="${wikiUrl(name, src===S)}" target="_blank" rel="noopener">${esc(name)}</a>
-          ${ssn?`<span class="bday s-${ssn}" title="Birthday: ${ssn} ${day}"><svg aria-hidden="true"><use href="#g-${ssn}"/></svg>${ssn} ${day}</span>`:""}
         </div>
+        ${ssn?`<span class="bday s-${ssn}" title="Birthday: ${ssn} ${day}"><svg aria-hidden="true"><use href="#g-${ssn}"/></svg>${ssn} ${day}</span>`:""}
       </div>
       <ul class="gifts">${gifts.map(gift).join("")}</ul>
     </div></article>`;
